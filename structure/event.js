@@ -6,7 +6,7 @@ const event = S.listItem()
   .child(
     S.list()
       .title('Evenements')
-      .items([S.documentTypeListItem('post').title('Tous').icon(AllIcon)])
+      .items([S.documentTypeListItem('event').title('Tous').icon(AllIcon)])
   );
 
 export default event;

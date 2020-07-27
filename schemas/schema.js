@@ -4,10 +4,12 @@ import createSchema from 'part:@sanity/base/schema-creator';
 // Then import schema types from any plugins that might expose them
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
-// We import object and document schemas
+// OBJECTS
 import blockContent from './objects/blockContent';
 import mainImage from './objects/mainImage';
 import openGraph from './objects/openGraph';
+
+// DOCUMENTS
 import post from './documents/post';
 import ambassador from './documents/ambassador';
 import siteSettings from './documents/siteSettings';
@@ -16,6 +18,7 @@ import department from './documents/department';
 import theme from './documents/theme';
 import format from './documents/format';
 import projectOwner from './documents/projectOwner';
+import event from './documents/event';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,6 +38,7 @@ export default createSchema({
     theme,
     format,
     projectOwner,
+    event,
     // _____________________
     // OBJECT TYPES
     // When added to this list, object types can be used as
