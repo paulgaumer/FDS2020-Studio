@@ -1,12 +1,12 @@
 export default {
-  name: 'author',
-  title: 'Author',
+  name: 'ambassador',
+  title: 'Ambassadeur',
   type: 'document',
   fields: [
     {
       name: 'name',
-      title: 'Name',
-      type: 'string'
+      title: 'Nom',
+      type: 'string',
     },
     {
       name: 'slug',
@@ -14,35 +14,35 @@ export default {
       type: 'slug',
       options: {
         source: 'name',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
-      name: 'bio',
-      title: 'Bio',
+      name: 'testimony',
+      title: 'Témoignage',
       type: 'array',
       of: [
         {
           title: 'Block',
           type: 'block',
-          styles: [{title: 'Normal', value: 'normal'}],
-          lists: []
-        }
-      ]
-    }
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+        },
+      ],
+    },
   ],
   preview: {
     select: {
       title: 'name',
-      media: 'image'
-    }
-  }
-}
+      media: 'image',
+    },
+  },
+};
