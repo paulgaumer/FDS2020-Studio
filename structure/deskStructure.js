@@ -12,16 +12,16 @@ export default () =>
   S.list()
     .title('Gestion de contenu')
     .items([
-      S.documentListItem()
-        .schemaType('siteSettings')
+      S.listItem()
         .title('Paramètres du site')
         .icon(GoSettings)
         .child(
-          S.document()
+          S.editor()
+            .id('siteSettings')
             .schemaType('siteSettings')
             .documentId('siteSettings')
-            .views([S.view.form()])
         ),
+      S.divider(),
       event,
       S.documentTypeListItem('projectOwner')
         .title('Porteurs de projets')

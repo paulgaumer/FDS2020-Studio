@@ -11,7 +11,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'website',
@@ -20,7 +20,7 @@ export default {
     },
     {
       name: 'facebook',
-      title: 'Page facebook',
+      title: 'Page Facebook',
       type: 'string',
     },
   ],

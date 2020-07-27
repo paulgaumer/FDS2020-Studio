@@ -2,6 +2,28 @@ export default {
   name: 'event',
   title: 'Evenement',
   type: 'document',
+  initialValue: {
+    bookingToggle: false,
+    featured: false,
+  },
+  fieldsets: [
+    { name: 'featuredField', title: '' },
+    {
+      name: 'dateHoursField',
+      title: 'Dates & Horaires',
+      options: {
+        columns: 2,
+      },
+    },
+    {
+      name: 'bookingField',
+      title: 'Réservation',
+      options: {
+        collapsible: true, // Makes the whole fieldset collapsible
+        collapsed: true, // Defines if the fieldset should be collapsed by default or not
+      },
+    },
+  ],
   fields: [
     {
       name: 'title',
@@ -16,6 +38,12 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+    },
+    {
+      name: 'featured',
+      title: 'Label Coup de Coeur',
+      type: 'boolean',
+      fieldset: 'featuredField',
     },
     {
       name: 'description',
@@ -42,30 +70,54 @@ export default {
       to: {
         type: 'department',
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'address',
       title: 'Adresse',
       type: 'string',
     },
+    // {
+    //   name: 'map',
+    //   title: 'map',
+    //   type: 'geopoint',
+    // },
+    // DATE & HOURS FIELD
     {
       name: 'startDate',
-      title: 'Date de début',
+      title: 'Début',
       type: 'datetime',
+      fieldset: 'dateHoursField',
     },
     {
       name: 'endDate',
-      title: 'Date de fin',
+      title: 'Fin',
       type: 'datetime',
+      fieldset: 'dateHoursField',
     },
+    // BOOKING FIELD
     {
-      name: 'booking',
+      name: 'bookingToggle',
       title: 'Réservation Obligatoire',
       type: 'boolean',
+      fieldset: 'bookingField',
     },
     {
+      name: 'bookingEmail',
+      title: 'Email',
+      type: 'string',
+      fieldset: 'bookingField',
+    },
+    {
+      name: 'bookingPhone',
+      title: 'Téléphone',
+      type: 'string',
+      fieldset: 'bookingField',
+    },
+    // THEME
+    {
       name: 'theme',
-      title: 'Theme',
+      title: 'Thème',
       type: 'array',
       of: [
         {
@@ -75,10 +127,9 @@ export default {
           },
         },
       ],
-      options: {
-        layout: 'tags',
-      },
+      validation: (Rule) => Rule.required(),
     },
+    // FORMAT
     {
       name: 'format',
       title: 'Format',
@@ -91,11 +142,20 @@ export default {
           },
         },
       ],
+      validation: (Rule) => Rule.required(),
     },
+    // IMAGE
     {
       name: 'image',
       title: 'Image',
       type: 'mainImage',
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'department.name',
+      media: 'image',
+    },
+  },
 };
