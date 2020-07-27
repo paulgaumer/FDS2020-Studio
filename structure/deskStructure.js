@@ -6,6 +6,7 @@ import {
   GoPerson,
   GoBriefcase,
 } from 'react-icons/go';
+import { FaParagraph } from 'react-icons/fa';
 import event from './event';
 
 export default () =>
@@ -32,4 +33,6 @@ export default () =>
       S.documentTypeListItem('department').title('Départements').icon(GoTag),
       S.documentTypeListItem('theme').title('Thèmes').icon(GoTag),
       S.documentTypeListItem('format').title('Formats').icon(GoTag),
+      S.divider(),
+      S.documentTypeListItem('page').title('Pages & Texte').icon(FaParagraph),
     ]);

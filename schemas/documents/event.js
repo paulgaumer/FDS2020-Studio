@@ -3,7 +3,7 @@ export default {
   title: 'Evenement',
   type: 'document',
   initialValue: {
-    bookingToggle: false,
+    bookingRequired: false,
     featured: false,
   },
   fieldsets: [
@@ -97,7 +97,7 @@ export default {
     },
     // BOOKING FIELD
     {
-      name: 'bookingToggle',
+      name: 'bookingRequired',
       title: 'Réservation Obligatoire',
       type: 'boolean',
       fieldset: 'bookingField',

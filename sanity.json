@@ -13,7 +13,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "mapbox-input"
+    "mapbox-input",
+    "@sanity/vision"
   ],
   "parts": [
     {

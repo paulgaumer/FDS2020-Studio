@@ -19,6 +19,7 @@ import theme from './documents/theme';
 import format from './documents/format';
 import projectOwner from './documents/projectOwner';
 import event from './documents/event';
+import page from './documents/page';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -39,6 +40,7 @@ export default createSchema({
     format,
     projectOwner,
     event,
+    page,
     // _____________________
     // OBJECT TYPES
     // When added to this list, object types can be used as
