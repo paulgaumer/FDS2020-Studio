@@ -58,7 +58,7 @@ const event = S.listItem()
                   .schemaType('event')
                   .title('Evénements')
                   .filter(
-                    '_type == "event" && $departmentId in department._ref'
+                    '_type == "event" && $departmentId == department._ref'
                   )
                   .params({ departmentId })
               )

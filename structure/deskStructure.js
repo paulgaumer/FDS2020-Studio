@@ -13,16 +13,6 @@ export default () =>
   S.list()
     .title('Gestion de contenu')
     .items([
-      S.listItem()
-        .title('Paramètres du site')
-        .icon(GoSettings)
-        .child(
-          S.editor()
-            .id('siteSettings')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
-        ),
-      S.divider(),
       event,
       S.documentTypeListItem('projectOwner')
         .title('Porteurs de projets')
@@ -35,4 +25,14 @@ export default () =>
       S.documentTypeListItem('format').title('Formats').icon(GoTag),
       S.divider(),
       S.documentTypeListItem('page').title('Pages & Texte').icon(FaParagraph),
+      S.divider(),
+      S.listItem()
+        .title('Paramètres du site')
+        .icon(GoSettings)
+        .child(
+          S.editor()
+            .id('siteSettings')
+            .schemaType('siteSettings')
+            .documentId('siteSettings')
+        ),
     ]);
