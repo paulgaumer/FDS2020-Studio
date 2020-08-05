@@ -77,11 +77,11 @@ export default {
       title: 'Adresse',
       type: 'string',
     },
-    // {
-    //   name: 'map',
-    //   title: 'map',
-    //   type: 'geopoint',
-    // },
+    {
+      name: 'map',
+      title: 'map',
+      type: 'geopoint',
+    },
     // DATE & HOURS FIELD
     {
       name: 'startDate',
