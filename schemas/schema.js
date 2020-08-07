@@ -17,6 +17,7 @@ import logo from './documents/logo';
 import department from './documents/department';
 import theme from './documents/theme';
 import format from './documents/format';
+import audience from './documents/audience';
 import projectOwner from './documents/projectOwner';
 import event from './documents/event';
 import page from './documents/page';
@@ -38,6 +39,7 @@ export default createSchema({
     department,
     theme,
     format,
+    audience,
     projectOwner,
     event,
     page,

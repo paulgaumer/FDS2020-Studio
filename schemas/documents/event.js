@@ -5,6 +5,11 @@ export default {
   initialValue: {
     bookingRequired: false,
     featured: false,
+    village: false,
+    audience: {
+      _type: 'reference',
+      _ref: '8bcec1d3-d8af-47b0-85d5-cfd08bcb8e6b',
+    },
   },
   fieldsets: [
     { name: 'featuredField', title: '' },
@@ -38,6 +43,12 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+    },
+    {
+      name: 'village',
+      title: 'Label Village des Sciences',
+      type: 'boolean',
+      fieldset: 'featuredField',
     },
     {
       name: 'featured',
@@ -144,6 +155,16 @@ export default {
       ],
       validation: (Rule) => Rule.required(),
     },
+    // PUBLIC
+    {
+      name: 'audience',
+      title: 'Public',
+      type: 'reference',
+      to: {
+        type: 'audience',
+      },
+      validation: (Rule) => Rule.required(),
+    },
     // IMAGE
     {
       name: 'image',
@@ -151,6 +172,7 @@ export default {
       type: 'mainImage',
     },
   ],
+
   preview: {
     select: {
       title: 'title',

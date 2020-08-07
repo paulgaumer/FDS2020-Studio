@@ -23,6 +23,7 @@ export default () =>
       S.documentTypeListItem('department').title('Départements').icon(GoTag),
       S.documentTypeListItem('theme').title('Thèmes').icon(GoTag),
       S.documentTypeListItem('format').title('Formats').icon(GoTag),
+      S.documentTypeListItem('audience').title('Public').icon(GoTag),
       S.divider(),
       S.documentTypeListItem('page').title('Pages & Texte').icon(FaParagraph),
       S.divider(),
