@@ -10,6 +10,8 @@ export default {
       _type: 'reference',
       _ref: '8bcec1d3-d8af-47b0-85d5-cfd08bcb8e6b',
     },
+    startDate: '2020-10-02T13:00:00.000Z',
+    endDate: '2020-10-02T14:00:00.000Z',
   },
   fieldsets: [
     { name: 'featuredField', title: '' },

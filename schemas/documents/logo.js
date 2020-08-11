@@ -7,6 +7,21 @@ export default {
       name: 'name',
       title: 'Nom',
       type: 'string',
+      validation: (Rule) => Rule.error('A remplir').required(),
+    },
+    {
+      name: 'partners',
+      title: 'Partenaires',
+      description: `Ajouter un ou plusieurs tags décrivant les partenariats de cet acteur.`,
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'department',
+          },
+        },
+      ],
     },
     {
       name: 'image',
@@ -14,16 +29,6 @@ export default {
       type: 'image',
       options: {
         hotspot: true,
-      },
-    },
-    {
-      name: 'alt',
-      type: 'string',
-      title: 'Alternative text',
-      description: `Important pour le SEO et l'accessibilité.`,
-      validation: (Rule) => Rule.error('A remplir').required(),
-      options: {
-        isHighlighted: true,
       },
     },
   ],
