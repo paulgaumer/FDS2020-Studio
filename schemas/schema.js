@@ -8,7 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import blockContent from './objects/blockContent';
 import mainImage from './objects/mainImage';
 import openGraph from './objects/openGraph';
-import editorialPage from './objects/editorialPage';
+import editorialPage from './objects/customPages/editorialPage';
 
 // DOCUMENTS
 import post from './documents/post';
