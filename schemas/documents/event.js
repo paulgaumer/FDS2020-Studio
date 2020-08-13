@@ -86,11 +86,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'address',
-      title: 'Adresse',
-      type: 'string',
-    },
-    {
       name: 'map',
       title: 'map',
       type: 'geopoint',
