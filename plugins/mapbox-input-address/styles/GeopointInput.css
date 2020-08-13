@@ -26,3 +26,16 @@
     padding-top: var(--medium-padding);
   }
 }
+
+.addressDisplay {
+  padding-bottom: 1rem;
+}
+
+.addressDisplay > p:first-child {
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 0;
+}
+.addressDisplay > p:last-child {
+  margin-top: 0.5rem;
+}

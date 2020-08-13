@@ -15,14 +15,14 @@ import styles from '../styles/GeopointInput.css';
 import GeopointSelect from './GeopointSelect';
 import Pin from './Pin';
 
-const getLocale = (context) => {
-  const intl = context.intl || {};
-  return (
-    intl.locale ||
-    (typeof window !== 'undefined' && window.navigator.language) ||
-    'en'
-  );
-};
+// const getLocale = (context) => {
+//   const intl = context.intl || {};
+//   return (
+//     intl.locale ||
+//     (typeof window !== 'undefined' && window.navigator.language) ||
+//     'fr'
+//   );
+// };
 
 class GeopointInput extends React.Component {
   static propTypes = {
@@ -35,6 +35,7 @@ class GeopointInput extends React.Component {
     value: PropTypes.shape({
       lat: PropTypes.number,
       lng: PropTypes.number,
+      address: PropTypes.string,
     }),
     type: PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -67,7 +68,8 @@ class GeopointInput extends React.Component {
     this.setState((prevState) => ({ modalOpen: !prevState.modalOpen }));
   }
 
-  handleChange = (lngLat) => {
+  handleChange = (lngLat, address) => {
+    console.log(address);
     const { type, onChange } = this.props;
     onChange(
       PatchEvent.from([
@@ -76,6 +78,7 @@ class GeopointInput extends React.Component {
         }),
         set(lngLat[1], ['lat']),
         set(lngLat[0], ['lng']),
+        set(address, ['address']),
       ])
     );
   };
@@ -121,6 +124,10 @@ class GeopointInput extends React.Component {
       >
         {value && (
           <div>
+            <div className={styles.addressDisplay}>
+              <p>ADRESSE</p>
+              <p>{value.address}</p>
+            </div>
             <StaticMap
               width="100%"
               height={300}
@@ -138,12 +145,12 @@ class GeopointInput extends React.Component {
 
         <div className={styles.functions}>
           <Button onClick={this.handleToggleModal}>
-            {value ? 'Edit' : 'Set location'}
+            {value ? 'Modifier' : 'Rentrer une adresse'}
           </Button>
 
           {value && (
             <Button type="button" onClick={this.handleClear}>
-              Remove
+              Supprimer
             </Button>
           )}
         </div>
@@ -164,7 +171,8 @@ class GeopointInput extends React.Component {
                 onChange={this.handleChange}
                 defaultLocation={config.defaultLocation}
                 defaultZoom={config.defaultZoom}
-                locale={getLocale(this.context)}
+                locale="fr"
+                // locale={getLocale(this.context)}
               />
             </div>
           </Dialog>

@@ -33,7 +33,6 @@ class GeopointSelect extends React.Component {
       longitude: -122.4376,
       zoom: 8,
     },
-    physicalAddress: '',
   };
 
   mapRef = React.createRef();
@@ -76,14 +75,11 @@ class GeopointSelect extends React.Component {
   }
 
   handleOnResult = (event) => {
-    console.log(event.result);
     const r = event.result;
-    this.setValue(event.result.geometry.coordinates);
-    this.setState({
-      physicalAddress: `${r.address ? r.address : ''} ${r.text}, ${
-        r.context[0].text
-      } ${r.context[1].text}`,
-    });
+    const physicalAddress = `${r.address ? r.address : ''} ${r.text}, ${
+      r.context[0].text
+    } ${r.context[1].text}`;
+    this.setValue(event.result.geometry.coordinates, physicalAddress);
   };
 
   handleMarkerDragEnd = (event) => {
@@ -96,8 +92,8 @@ class GeopointSelect extends React.Component {
     }
   };
 
-  setValue(geoPoint) {
-    this.props.onChange(geoPoint);
+  setValue(geoPoint, address) {
+    this.props.onChange(geoPoint, address);
   }
 
   render() {
