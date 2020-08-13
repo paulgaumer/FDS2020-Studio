@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import blockContent from './objects/blockContent';
 import mainImage from './objects/mainImage';
 import openGraph from './objects/openGraph';
+import addressGps from './objects/addressGps';
 import editorialPage from './objects/customPages/editorialPage';
 
 // DOCUMENTS
@@ -52,5 +53,6 @@ export default createSchema({
     openGraph,
     mainImage,
     editorialPage,
+    addressGps,
   ]),
 });
