@@ -20,10 +20,13 @@ export default () =>
       S.documentTypeListItem('ambassador').title('Ambassadeurs').icon(GoPerson),
       S.documentTypeListItem('logo').title('Logos').icon(GoFileMedia),
       S.divider(),
-      S.documentTypeListItem('department').title('Départements').icon(GoTag),
       S.documentTypeListItem('theme').title('Thèmes').icon(GoTag),
       S.documentTypeListItem('format').title('Formats').icon(GoTag),
       S.documentTypeListItem('audience').title('Public').icon(GoTag),
+      S.documentTypeListItem('department').title('Départements').icon(GoTag),
+      S.documentTypeListItem('contactDepartment')
+        .title('Contacts Départementaux')
+        .icon(GoTag),
       S.divider(),
       S.documentTypeListItem('page').title('Pages & Texte').icon(FaParagraph),
       S.divider(),

@@ -23,6 +23,7 @@ import audience from './documents/audience';
 import projectOwner from './documents/projectOwner';
 import event from './documents/event';
 import page from './documents/page';
+import contact from './documents/contact';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -45,6 +46,7 @@ export default createSchema({
     projectOwner,
     event,
     page,
+    contact,
     // _____________________
     // OBJECT TYPES
     // When added to this list, object types can be used as
