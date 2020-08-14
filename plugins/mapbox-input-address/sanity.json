@@ -7,8 +7,8 @@
   "parts": [
     {
       "name": "part:mapbox-input-address/input/geopoint",
-      "implements": "part:@sanity/form-builder/input/geopoint",
-      "path": "GeopointInput.js"
+      "implements": "part:@sanity/form-builder/input-resolver",
+      "path": "../../parts/inputResolver.js"
     }
   ]
 }

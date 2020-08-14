@@ -87,8 +87,8 @@ export default {
     },
     {
       name: 'map',
-      title: 'map',
-      type: 'geopoint',
+      title: 'Adresse',
+      type: 'addressGps',
     },
     // DATE & HOURS FIELD
     {
