@@ -11,6 +11,8 @@ import openGraph from './objects/openGraph';
 import addressGps from './objects/addressGps';
 import editorialPageBlock from './objects/customPages/editorialPage';
 import contactPageBlock from './objects/customPages/contactPage';
+import covidPageBlock from './objects/customPages/covidPage';
+import youtube from './objects/youtube';
 
 // DOCUMENTS
 import post from './documents/post';
@@ -55,8 +57,10 @@ export default createSchema({
     blockContent,
     openGraph,
     mainImage,
+    addressGps,
+    youtube,
     editorialPageBlock,
     contactPageBlock,
-    addressGps,
+    covidPageBlock,
   ]),
 });

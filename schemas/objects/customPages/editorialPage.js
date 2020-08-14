@@ -70,4 +70,11 @@ export default {
       fieldset: 'contactSection',
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        title: `Modifier la page Editorial`,
+      };
+    },
+  },
 };

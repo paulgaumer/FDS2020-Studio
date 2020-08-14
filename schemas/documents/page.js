@@ -2,15 +2,20 @@ export default {
   name: 'page',
   title: 'Page',
   type: 'document',
-  fieldsets: [{ name: 'admin', title: 'ADMIN (Ne pas modifier)' }],
+  fieldsets: [{ name: 'admin', title: '⚠ ADMIN (Ne pas modifier) ⚠' }],
   fields: [
     {
       name: 'pageContent',
-      title: 'CONTENU DE PAGE A MODIFIER',
+      title: 'CONTENU DE PAGE',
       type: 'array',
-      of: [{ type: 'editorialPageBlock' }, { type: 'contactPageBlock' }],
+      of: [
+        { type: 'editorialPageBlock' },
+        { type: 'contactPageBlock' },
+        { type: 'covidPageBlock' },
+      ],
       options: {
         editModal: 'fullscreen',
+        limit: 1,
       },
     },
     {

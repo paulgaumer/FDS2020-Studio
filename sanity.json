@@ -24,6 +24,10 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./structure/deskStructure.js"
+    },
+    {
+      "implements": "part:@sanity/form-builder/input-resolver",
+      "path": "./parts/inputResolver.js"
     }
   ]
 }
