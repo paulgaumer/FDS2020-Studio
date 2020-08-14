@@ -34,7 +34,7 @@ const event = S.listItem()
           .child(
             // List out all categories
             S.documentTypeList('format')
-              .title('Evénements par thème')
+              .title('Evénements par format')
               .child((formatId) =>
                 // List out project documents where the _id for the selected
                 // category appear as a _ref in the project’s categories array
@@ -50,7 +50,7 @@ const event = S.listItem()
           .child(
             // List out all categories
             S.documentTypeList('department')
-              .title('Evénements par thème')
+              .title('Evénements par département')
               .child((departmentId) =>
                 // List out project documents where the _id for the selected
                 // category appear as a _ref in the project’s categories array

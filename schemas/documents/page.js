@@ -6,8 +6,12 @@ export default {
   fields: [
     {
       name: 'pageContent',
-      title: 'A MODIFIER',
-      type: 'editorialPage',
+      title: 'CONTENU DE PAGE A MODIFIER',
+      type: 'array',
+      of: [{ type: 'editorialPageBlock' }, { type: 'contactPageBlock' }],
+      options: {
+        editModal: 'fullscreen',
+      },
     },
     {
       name: 'pageName',

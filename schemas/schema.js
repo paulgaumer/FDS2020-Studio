@@ -9,7 +9,8 @@ import blockContent from './objects/blockContent';
 import mainImage from './objects/mainImage';
 import openGraph from './objects/openGraph';
 import addressGps from './objects/addressGps';
-import editorialPage from './objects/customPages/editorialPage';
+import editorialPageBlock from './objects/customPages/editorialPage';
+import contactPageBlock from './objects/customPages/contactPage';
 
 // DOCUMENTS
 import post from './documents/post';
@@ -54,7 +55,8 @@ export default createSchema({
     blockContent,
     openGraph,
     mainImage,
-    editorialPage,
+    editorialPageBlock,
+    contactPageBlock,
     addressGps,
   ]),
 });

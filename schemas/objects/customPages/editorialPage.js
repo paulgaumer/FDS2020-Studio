@@ -1,6 +1,6 @@
 export default {
-  title: 'Editorial Page',
-  name: 'editorialPage',
+  title: 'Bloc pour page Editorial',
+  name: 'editorialPageBlock',
   type: 'object',
   fieldsets: [
     { name: 'topSection', title: 'Haut de page' },
