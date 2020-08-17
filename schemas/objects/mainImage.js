@@ -9,9 +9,16 @@ export default {
     {
       name: 'alt',
       type: 'string',
-      title: 'Alt',
-      description: `Important pour le SEO l'accessibilité.`,
-      validation: (Rule) => Rule.error('Le texte alt est manquant').required(),
+      title: 'Alt Text',
+      description: `Important pour le SEO et l'accessibilité.`,
+      options: {
+        isHighlighted: true,
+      },
+    },
+    {
+      name: 'caption',
+      type: 'string',
+      title: 'Légende (optionnelle)',
       options: {
         isHighlighted: true,
       },
