@@ -6,6 +6,7 @@ export default {
     bookingRequired: false,
     featured: false,
     village: false,
+    education: false,
     audience: {
       _type: 'reference',
       _ref: '8bcec1d3-d8af-47b0-85d5-cfd08bcb8e6b',
@@ -55,6 +56,12 @@ export default {
     {
       name: 'featured',
       title: 'Label Coup de Coeur',
+      type: 'boolean',
+      fieldset: 'featuredField',
+    },
+    {
+      name: 'education',
+      title: 'Label Scolaire',
       type: 'boolean',
       fieldset: 'featuredField',
     },
@@ -166,7 +173,7 @@ export default {
     {
       name: 'image',
       title: 'Image',
-      type: 'mainImage',
+      type: 'image',
     },
   ],
 
