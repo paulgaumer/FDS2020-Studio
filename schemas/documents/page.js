@@ -12,6 +12,7 @@ export default {
         { type: 'editorialPageBlock' },
         { type: 'contactPageBlock' },
         { type: 'covidPageBlock' },
+        { type: 'homePageBlock' },
       ],
       options: {
         editModal: 'fullscreen',
