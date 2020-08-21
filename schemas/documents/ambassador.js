@@ -7,15 +7,18 @@ export default {
       name: 'name',
       title: 'Nom',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'role',
       title: 'Role',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'testimony',
       title: 'Témoignage',
+      validation: (Rule) => Rule.required(),
       type: 'array',
       of: [
         {
