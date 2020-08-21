@@ -2,7 +2,10 @@ export default {
   title: 'Bloc pour la Homepage',
   name: 'homePageBlock',
   type: 'object',
-  fieldsets: [{ name: 'features', title: 'A propos de la Fête de la Science' }],
+  fieldsets: [
+    { name: 'features', title: 'A propos de la Fête de la Science' },
+    { name: 'instagram', title: "A propos d'Instagram" },
+  ],
   fields: [
     {
       name: 'featuresTitle',
@@ -26,6 +29,12 @@ export default {
       title: 'Texte du bouton',
       type: 'string',
       fieldset: 'features',
+    },
+    {
+      name: 'instagramTitle',
+      title: 'Titre Instagram',
+      type: 'string',
+      fieldset: 'instagram',
     },
   ],
   preview: {
