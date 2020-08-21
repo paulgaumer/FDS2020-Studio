@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/vision",
-    "mapbox-input-address"
+    "mapbox-input-address",
+    "@sanity/rich-date-input"
   ],
   "parts": [
     {

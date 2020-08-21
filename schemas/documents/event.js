@@ -101,13 +101,19 @@ export default {
     {
       name: 'startDate',
       title: 'Début',
-      type: 'datetime',
+      type: 'richDate',
+      options: {
+        timeStep: 30,
+      },
       fieldset: 'dateHoursField',
     },
     {
       name: 'endDate',
       title: 'Fin',
-      type: 'datetime',
+      type: 'richDate',
+      options: {
+        timeStep: 30,
+      },
       fieldset: 'dateHoursField',
     },
     // BOOKING FIELD

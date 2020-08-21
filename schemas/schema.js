@@ -15,9 +15,9 @@ import homePageBlock from './objects/customPages/homePage';
 import covidPageBlock from './objects/customPages/covidPage';
 import youtube from './objects/youtube';
 import featureDesc from './objects/featureDesc';
+import richDate from 'part:@sanity/form-builder/input/rich-date/schema';
 
 // DOCUMENTS
-import post from './documents/post';
 import ambassador from './documents/ambassador';
 import siteSettings from './documents/siteSettings';
 import logo from './documents/logo';
@@ -40,7 +40,6 @@ export default createSchema({
     //DOCUMENTS TYPES
     // The following are document types which will appear
     // in the studio.
-    post,
     ambassador,
     siteSettings,
     logo,
@@ -62,6 +61,7 @@ export default createSchema({
     addressGps,
     youtube,
     featureDesc,
+    richDate,
     editorialPageBlock,
     contactPageBlock,
     covidPageBlock,
