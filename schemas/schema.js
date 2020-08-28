@@ -13,6 +13,7 @@ import editorialPageBlock from './objects/customPages/editorialPage';
 import contactPageBlock from './objects/customPages/contactPage';
 import homePageBlock from './objects/customPages/homePage';
 import covidPageBlock from './objects/customPages/covidPage';
+import mentionsLegalesPageBlock from './objects/customPages/mentionsLegalesPage';
 import youtube from './objects/youtube';
 import featureDesc from './objects/featureDesc';
 import richDate from 'part:@sanity/form-builder/input/rich-date/schema';
@@ -65,6 +66,7 @@ export default createSchema({
     editorialPageBlock,
     contactPageBlock,
     covidPageBlock,
+    mentionsLegalesPageBlock,
     homePageBlock,
   ]),
 });
