@@ -58,8 +58,52 @@ export default {
     // Partners Section
     {
       name: 'partnersTitle',
-      title: 'Titre',
+      title: 'Titre de Section',
       type: 'string',
+      fieldset: 'partnersSection',
+    },
+    {
+      name: 'organizersTitle',
+      title: 'Titre Logos Organisateurs',
+      type: 'string',
+      fieldset: 'partnersSection',
+    },
+    {
+      name: 'logosOrganizers',
+      title: 'Logos Organisateurs',
+      type: 'array',
+      of: [
+        {
+          name: 'logo',
+          title: 'logo',
+          type: 'reference',
+          to: {
+            type: 'logo',
+          },
+        },
+      ],
+      fieldset: 'partnersSection',
+    },
+    {
+      name: 'coordinationTitle',
+      title: 'Titre Logos Coordination',
+      type: 'string',
+      fieldset: 'partnersSection',
+    },
+    {
+      name: 'logosCoordination',
+      title: 'Logos Coordination',
+      type: 'array',
+      of: [
+        {
+          name: 'logo',
+          title: 'logo',
+          type: 'reference',
+          to: {
+            type: 'logo',
+          },
+        },
+      ],
       fieldset: 'partnersSection',
     },
     // Contact Section
