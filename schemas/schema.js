@@ -30,6 +30,7 @@ import projectOwner from './documents/projectOwner';
 import event from './documents/event';
 import page from './documents/page';
 import contact from './documents/contact';
+import pressKit from './documents/pressKit';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -52,6 +53,7 @@ export default createSchema({
     event,
     page,
     contact,
+    pressKit,
     // _____________________
     // OBJECT TYPES
     // When added to this list, object types can be used as

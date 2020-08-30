@@ -12,7 +12,8 @@ export default {
     {
       title: 'Open Graph',
       name: 'openGraph',
-      description: 'Les meta tags par défaut sont définis ici.',
+      description:
+        "Les meta tags par défaut sont définis ici. Ils définissent la manière dont le site apparait lors d'une recherche Google ou d'un partage sur les réseaux sociaux",
       type: 'openGraph',
     },
   ],

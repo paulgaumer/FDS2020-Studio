@@ -17,10 +17,16 @@ export default {
       validation: (Rule) => Rule.max(155).warning('Moins de 155 caractères'),
     },
     {
+      title: 'Mots-clés',
+      name: 'keywords',
+      type: 'string',
+      description: 'Liste de mots-clés séparés par une virgule',
+    },
+    {
       title: 'Image',
       description: 'Facebook recommande une taille de 1200x630',
       name: 'image',
-      type: 'mainImage',
+      type: 'image',
     },
     /*
     // You can add videos to Open Graph tags too

@@ -5,6 +5,7 @@ import {
   GoFileMedia,
   GoPerson,
   GoBriefcase,
+  GoBroadcast,
 } from 'react-icons/go';
 import { FaParagraph } from 'react-icons/fa';
 import event from './event';
@@ -19,6 +20,7 @@ export default () =>
         .icon(GoBriefcase),
       S.documentTypeListItem('ambassador').title('Ambassadeurs').icon(GoPerson),
       S.documentTypeListItem('logo').title('Logos').icon(GoFileMedia),
+      S.documentTypeListItem('pressKit').title('Press Kit').icon(GoBroadcast),
       S.divider(),
       S.documentTypeListItem('theme').title('Thèmes').icon(GoTag),
       S.documentTypeListItem('format').title('Formats').icon(GoTag),
