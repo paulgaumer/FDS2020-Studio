@@ -15,7 +15,9 @@
     "@sanity/desk-tool",
     "@sanity/vision",
     "mapbox-input-address",
-    "@sanity/rich-date-input"
+    "@sanity/rich-date-input",
+    "@sanity/dashboard",
+    "dashboard-widget-netlify"
   ],
   "parts": [
     {
@@ -29,6 +31,10 @@
     {
       "implements": "part:@sanity/form-builder/input-resolver",
       "path": "./parts/inputResolver.js"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./structure/dashboardConfig.js"
     }
   ]
 }
