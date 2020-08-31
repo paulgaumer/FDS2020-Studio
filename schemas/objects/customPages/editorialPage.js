@@ -6,6 +6,7 @@ export default {
     { name: 'topSection', title: 'Haut de page' },
     { name: 'partnersSection', title: 'Partenaires' },
     { name: 'contactSection', title: 'Contact' },
+    { name: 'previousEditionsSection', title: 'Editions' },
   ],
   fields: [
     // Top Section
@@ -21,11 +22,35 @@ export default {
       fieldset: 'topSection',
       type: 'blockContent',
     },
+    // Previous Editions Section
+    {
+      name: 'previousEditionsTitle',
+      title: 'Titre de Section',
+      type: 'string',
+      fieldset: 'previousEditionsSection',
+    },
+    {
+      name: 'previousEditions',
+      title: 'Photos des Editions Précédentes',
+      type: 'array',
+      of: [
+        {
+          type: 'mainImage',
+        },
+      ],
+      fieldset: 'previousEditionsSection',
+    },
     // Partners Section
     {
       name: 'partnersTitle',
       title: 'Titre de Section',
       type: 'string',
+      fieldset: 'partnersSection',
+    },
+    {
+      name: 'partnersContent',
+      title: 'Contenu',
+      type: 'blockContent',
       fieldset: 'partnersSection',
     },
     {
@@ -79,16 +104,11 @@ export default {
       type: 'text',
       fieldset: 'contactSection',
     },
-    // Previous Editions Section
     {
-      name: 'previousEditions',
-      title: 'Photos des Editions Précédentes',
-      type: 'array',
-      of: [
-        {
-          type: 'mainImage',
-        },
-      ],
+      name: 'contactButton',
+      title: 'Texte du Bouton',
+      type: 'string',
+      fieldset: 'contactSection',
     },
   ],
   preview: {
