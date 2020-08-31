@@ -11,8 +11,20 @@ export default {
       _type: 'reference',
       _ref: '8bcec1d3-d8af-47b0-85d5-cfd08bcb8e6b',
     },
-    startDate: '2020-10-02T13:00:00.000Z',
-    endDate: '2020-10-02T14:00:00.000Z',
+    startDate: {
+      _type: 'richDate',
+      local: '2020-10-02T10:00:00.000Z',
+      offset: '-120',
+      timezone: 'Europe/Paris',
+      utc: '2020-10-02T08:00:00.000Z',
+    },
+    endDate: {
+      _type: 'richDate',
+      local: '2020-10-12T10:00:00.000Z',
+      offset: '-120',
+      timezone: 'Europe/Paris',
+      utc: '2020-10-12T08:00:00.000Z',
+    },
   },
   fieldsets: [
     { name: 'featuredField', title: '' },
@@ -37,6 +49,7 @@ export default {
       name: 'title',
       title: 'Titre',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
@@ -46,6 +59,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'village',
@@ -69,6 +83,7 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'blockContent',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'projectOwners',
@@ -82,6 +97,7 @@ export default {
           },
         },
       ],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'department',
@@ -183,6 +199,7 @@ export default {
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
     },
   ],
 
