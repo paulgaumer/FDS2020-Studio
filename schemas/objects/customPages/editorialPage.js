@@ -113,6 +113,17 @@ export default {
       type: 'text',
       fieldset: 'contactSection',
     },
+    // Previous Editions Section
+    {
+      name: 'previousEditions',
+      title: 'Photos des Editions Précédentes',
+      type: 'array',
+      of: [
+        {
+          type: 'mainImage',
+        },
+      ],
+    },
   ],
   preview: {
     prepare() {
