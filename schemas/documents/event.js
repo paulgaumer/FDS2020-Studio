@@ -71,20 +71,20 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'villagePick',
-      title: 'Choisir un village associé',
+      name: 'village',
+      title: 'Choisir le village partenaire',
       type: 'reference',
       to: {
         type: 'village',
       },
       fieldset: 'villageField',
     },
-    {
-      name: 'village',
-      title: 'Label Village des Sciences',
-      type: 'boolean',
-      fieldset: 'featuredField',
-    },
+    // {
+    //   name: 'village',
+    //   title: 'Label Village des Sciences',
+    //   type: 'boolean',
+    //   fieldset: 'featuredField',
+    // },
     {
       name: 'featured',
       title: 'Label Coup de Coeur',
