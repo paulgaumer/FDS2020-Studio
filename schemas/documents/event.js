@@ -28,7 +28,7 @@ export default {
     },
   },
   fieldsets: [
-    { name: 'featuredField', title: '' },
+    { name: 'featuredField', title: 'Labels' },
     {
       name: 'dateHoursField',
       title: 'Dates & Horaires',
@@ -39,6 +39,14 @@ export default {
     {
       name: 'bookingField',
       title: 'Réservation',
+      options: {
+        collapsible: true, // Makes the whole fieldset collapsible
+        collapsed: true, // Defines if the fieldset should be collapsed by default or not
+      },
+    },
+    {
+      name: 'villageField',
+      title: 'Village des Sciences',
       options: {
         collapsible: true, // Makes the whole fieldset collapsible
         collapsed: true, // Defines if the fieldset should be collapsed by default or not
@@ -61,6 +69,15 @@ export default {
         maxLength: 96,
       },
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'villagePick',
+      title: 'Choisir un village associé',
+      type: 'reference',
+      to: {
+        type: 'village',
+      },
+      fieldset: 'villageField',
     },
     {
       name: 'village',

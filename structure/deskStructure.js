@@ -7,7 +7,7 @@ import {
   GoBriefcase,
   GoBroadcast,
 } from 'react-icons/go';
-import { FaParagraph } from 'react-icons/fa';
+import { FaParagraph, FaCampground } from 'react-icons/fa';
 import event from './event';
 
 export default () =>
@@ -15,6 +15,9 @@ export default () =>
     .title('Gestion de contenu')
     .items([
       event,
+      S.documentTypeListItem('village')
+        .title('Villages des Sciences')
+        .icon(FaCampground),
       S.documentTypeListItem('projectOwner')
         .title('Porteurs de projets')
         .icon(GoBriefcase),
