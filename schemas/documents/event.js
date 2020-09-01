@@ -208,10 +208,15 @@ export default {
     {
       name: 'audience',
       title: 'Public',
-      type: 'reference',
-      to: {
-        type: 'audience',
-      },
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'audience',
+          },
+        },
+      ],
       validation: (Rule) => Rule.required(),
     },
     // IMAGE
