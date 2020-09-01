@@ -76,9 +76,10 @@ class GeopointSelect extends React.Component {
 
   handleOnResult = (event) => {
     const r = event.result;
-    const physicalAddress = `${r.address ? r.address : ''} ${r.text}, ${
-      r.context[0].text
-    } ${r.context[1].text}`;
+    console.log(r);
+    const physicalAddress = `${r.text}, ${
+      r.properties.address ? r.properties.address : ''
+    }, ${r.context[0].text} ${r.context[1].text}`;
     this.setValue(event.result.geometry.coordinates, physicalAddress);
   };
 

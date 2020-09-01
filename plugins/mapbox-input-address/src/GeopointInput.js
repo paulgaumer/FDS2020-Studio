@@ -126,7 +126,22 @@ class GeopointInput extends React.Component {
           <div>
             <div className={styles.addressDisplay}>
               <p>ADRESSE</p>
-              <p>{value.address}</p>
+              <input
+                id="myAddress"
+                value={value.address}
+                style={{ width: '100%', marginTop: '.5em' }}
+                onChange={(e) => {
+                  const { type, onChange } = this.props;
+                  onChange(
+                    PatchEvent.from([
+                      setIfMissing({
+                        _type: type.name,
+                      }),
+                      set(e.currentTarget.value, ['address']),
+                    ])
+                  );
+                }}
+              />
             </div>
             <StaticMap
               width="100%"

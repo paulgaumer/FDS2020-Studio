@@ -6,7 +6,6 @@ export default {
     bookingRequired: false,
     bookingRecommanded: false,
     featured: false,
-    village: false,
     education: false,
     audience: {
       _type: 'reference',
@@ -15,14 +14,14 @@ export default {
     startDate: {
       _type: 'richDate',
       local: '2020-10-02T10:00:00.000Z',
-      offset: '-120',
+      offset: -120,
       timezone: 'Europe/Paris',
       utc: '2020-10-02T08:00:00.000Z',
     },
     endDate: {
       _type: 'richDate',
       local: '2020-10-12T10:00:00.000Z',
-      offset: '-120',
+      offset: -120,
       timezone: 'Europe/Paris',
       utc: '2020-10-12T08:00:00.000Z',
     },
