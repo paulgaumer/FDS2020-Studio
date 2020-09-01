@@ -4,6 +4,7 @@ export default {
   type: 'document',
   initialValue: {
     bookingRequired: false,
+    bookingRecommanded: false,
     featured: false,
     village: false,
     education: false,
@@ -136,6 +137,12 @@ export default {
     {
       name: 'bookingRequired',
       title: 'Réservation Obligatoire',
+      type: 'boolean',
+      fieldset: 'bookingField',
+    },
+    {
+      name: 'bookingRecommanded',
+      title: 'Réservation Conseillée',
       type: 'boolean',
       fieldset: 'bookingField',
     },
