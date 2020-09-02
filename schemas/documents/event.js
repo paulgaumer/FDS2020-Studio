@@ -145,7 +145,7 @@ export default {
           },
         },
       ],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().unique(),
     },
     // FORMAT
     {
@@ -160,7 +160,7 @@ export default {
           },
         },
       ],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().unique(),
     },
     // PUBLIC
     {
@@ -175,7 +175,7 @@ export default {
           },
         },
       ],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().unique(),
     },
     // IMAGE
     {
