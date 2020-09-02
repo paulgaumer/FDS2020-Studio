@@ -46,4 +46,19 @@ export default {
       fieldset: 'endField',
     },
   ],
+  preview: {
+    select: {
+      startDate: 'startDate',
+      endDate: 'endDate',
+      startTime: 'startTime',
+      endTime: 'endTime',
+    },
+    prepare(selection) {
+      const { startDate, endDate, startTime, endTime } = selection;
+      return {
+        title: `${startDate} -> ${endDate}`,
+        subtitle: `${startTime} -> ${endTime}`,
+      };
+    },
+  },
 };

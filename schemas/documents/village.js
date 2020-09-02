@@ -2,31 +2,9 @@ export default {
   name: 'village',
   title: 'Village des Sciences',
   type: 'document',
-  initialValue: {
-    startDate: {
-      _type: 'richDate',
-      local: '2020-10-02T10:00:00.000Z',
-      offset: -120,
-      timezone: 'Europe/Paris',
-      utc: '2020-10-02T08:00:00.000Z',
-    },
-    endDate: {
-      _type: 'richDate',
-      local: '2020-10-12T10:00:00.000Z',
-      offset: -120,
-      timezone: 'Europe/Paris',
-      utc: '2020-10-12T08:00:00.000Z',
-    },
-  },
+
   fieldsets: [
     { name: 'featuredField', title: '' },
-    {
-      name: 'dateHoursField',
-      title: 'Dates & Horaires',
-      options: {
-        columns: 2,
-      },
-    },
     {
       name: 'bookingField',
       title: 'Réservation',
@@ -90,22 +68,11 @@ export default {
     },
     // DATE & HOURS FIELD
     {
-      name: 'startDate',
-      title: 'Début',
-      type: 'richDate',
-      options: {
-        timeStep: 30,
-      },
-      fieldset: 'dateHoursField',
-    },
-    {
-      name: 'endDate',
-      title: 'Fin',
-      type: 'richDate',
-      options: {
-        timeStep: 30,
-      },
-      fieldset: 'dateHoursField',
+      name: 'timeSlots',
+      title: 'Dates et Horaires',
+      type: 'array',
+      of: [{ type: 'timeSlot' }],
+      validation: (Rule) => Rule.required(),
     },
     // IMAGE
     {
