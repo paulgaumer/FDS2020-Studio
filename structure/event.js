@@ -100,6 +100,14 @@ const event = S.listItem()
                   .params({ villageId })
               )
           ),
+        S.listItem()
+          .title('Scolaires')
+          .schemaType('event')
+          .child(
+            S.documentList()
+              .title('Par Scolaires')
+              .filter('_type == "event" && education')
+          ),
       ])
   );
 
