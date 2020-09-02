@@ -17,6 +17,7 @@ import mentionsLegalesPageBlock from './objects/customPages/mentionsLegalesPage'
 import youtube from './objects/youtube';
 import featureDesc from './objects/featureDesc';
 import richDate from 'part:@sanity/form-builder/input/rich-date/schema';
+import timeSlot from './objects/timeSlot';
 
 // DOCUMENTS
 import ambassador from './documents/ambassador';
@@ -40,6 +41,23 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
+    // OBJECT TYPES
+    // When added to this list, object types can be used as
+    // { type: 'typename' } in other document schemas
+    blockContent,
+    openGraph,
+    mainImage,
+    addressGps,
+    youtube,
+    featureDesc,
+    richDate,
+    editorialPageBlock,
+    contactPageBlock,
+    covidPageBlock,
+    mentionsLegalesPageBlock,
+    homePageBlock,
+    timeSlot,
+    // _____________________
     //DOCUMENTS TYPES
     // The following are document types which will appear
     // in the studio.
@@ -56,21 +74,5 @@ export default createSchema({
     contact,
     pressKit,
     village,
-    // _____________________
-    // OBJECT TYPES
-    // When added to this list, object types can be used as
-    // { type: 'typename' } in other document schemas
-    blockContent,
-    openGraph,
-    mainImage,
-    addressGps,
-    youtube,
-    featureDesc,
-    richDate,
-    editorialPageBlock,
-    contactPageBlock,
-    covidPageBlock,
-    mentionsLegalesPageBlock,
-    homePageBlock,
   ]),
 });

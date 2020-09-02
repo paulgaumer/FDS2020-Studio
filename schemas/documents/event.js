@@ -7,34 +7,9 @@ export default {
     bookingRecommanded: false,
     featured: false,
     education: false,
-    audience: {
-      _type: 'reference',
-      _ref: '8bcec1d3-d8af-47b0-85d5-cfd08bcb8e6b',
-    },
-    startDate: {
-      _type: 'richDate',
-      local: '2020-10-02T10:00:00.000Z',
-      offset: -120,
-      timezone: 'Europe/Paris',
-      utc: '2020-10-02T08:00:00.000Z',
-    },
-    endDate: {
-      _type: 'richDate',
-      local: '2020-10-12T10:00:00.000Z',
-      offset: -120,
-      timezone: 'Europe/Paris',
-      utc: '2020-10-12T08:00:00.000Z',
-    },
   },
   fieldsets: [
     { name: 'featuredField', title: 'Labels' },
-    {
-      name: 'dateHoursField',
-      title: 'Dates & Horaires',
-      options: {
-        columns: 2,
-      },
-    },
     {
       name: 'bookingField',
       title: 'Réservation',
@@ -78,12 +53,6 @@ export default {
       },
       fieldset: 'villageField',
     },
-    // {
-    //   name: 'village',
-    //   title: 'Label Village des Sciences',
-    //   type: 'boolean',
-    //   fieldset: 'featuredField',
-    // },
     {
       name: 'featured',
       title: 'Label Coup de Coeur',
@@ -132,22 +101,11 @@ export default {
     },
     // DATE & HOURS FIELD
     {
-      name: 'startDate',
-      title: 'Début',
-      type: 'richDate',
-      options: {
-        timeStep: 30,
-      },
-      fieldset: 'dateHoursField',
-    },
-    {
-      name: 'endDate',
-      title: 'Fin',
-      type: 'richDate',
-      options: {
-        timeStep: 30,
-      },
-      fieldset: 'dateHoursField',
+      name: 'timeSlots',
+      title: 'Dates et Horaires',
+      type: 'array',
+      of: [{ type: 'timeSlot' }],
+      validation: (Rule) => Rule.required(),
     },
     // BOOKING FIELD
     {
