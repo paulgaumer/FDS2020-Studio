@@ -18,6 +18,7 @@ export default () =>
       S.documentTypeListItem('village')
         .title('Villages des Sciences')
         .icon(FaCampground),
+      S.divider(),
       S.documentTypeListItem('projectOwner')
         .title('Porteurs de projets')
         .icon(GoBriefcase),
