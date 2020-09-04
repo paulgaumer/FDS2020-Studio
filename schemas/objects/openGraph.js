@@ -25,7 +25,8 @@ export default {
     },
     {
       title: 'Image',
-      description: 'Facebook recommande une taille de 1200x630',
+      description:
+        'Facebook recommande une taille de 2400x1260 ou au minimum 1200x630',
       name: 'image',
       type: 'image',
     },

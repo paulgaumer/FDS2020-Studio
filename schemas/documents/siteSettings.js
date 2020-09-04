@@ -3,11 +3,24 @@ export default {
   type: 'document',
   title: 'Paramètres du site',
   __experimental_actions: ['update', /* "create", "delete", */ 'publish'],
+  fieldsets: [{ name: 'instagramField', title: 'Instagram' }],
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Titre',
+    },
+    {
+      name: 'instagramHashtag',
+      type: 'string',
+      title: 'Hashtag Instagram à afficher',
+      fieldset: 'instagramField',
+    },
+    {
+      name: 'instagramLink',
+      type: 'url',
+      title: 'Lien Instagram',
+      fieldset: 'instagramField',
     },
     {
       title: 'Open Graph',
