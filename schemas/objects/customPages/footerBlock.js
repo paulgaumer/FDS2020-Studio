@@ -29,6 +29,11 @@ export default {
         },
       ],
     },
+    {
+      name: 'instagramLinkFooter',
+      title: 'Lien vers Instagram',
+      type: 'url',
+    },
   ],
   preview: {
     prepare() {
