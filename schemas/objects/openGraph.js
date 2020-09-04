@@ -7,13 +7,14 @@ export default {
       title: 'Titre',
       name: 'title',
       type: 'string',
-      description: 'Attention! Ceci remplacera la titre de la page.',
+      description: 'Moins de 60 caractères',
       validation: (Rule) => Rule.max(60).warning('Moins de 60 caractères'),
     },
     {
       title: 'Description',
       name: 'description',
       type: 'text',
+      description: 'Moins de 155 caractères',
       validation: (Rule) => Rule.max(155).warning('Moins de 155 caractères'),
     },
     {

@@ -13,7 +13,7 @@ export default {
         { type: 'contactPageBlock' },
         { type: 'covidPageBlock' },
         { type: 'homePageBlock' },
-        { type: 'mentionsLegalesPageBlock' },
+        { type: 'footerBlock' },
       ],
       options: {
         editModal: 'fullscreen',
