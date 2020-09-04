@@ -18,6 +18,7 @@ import youtube from './objects/youtube';
 import featureDesc from './objects/featureDesc';
 import richDate from 'part:@sanity/form-builder/input/rich-date/schema';
 import timeSlot from './objects/timeSlot';
+import pressContact from './objects/pressContact';
 
 // DOCUMENTS
 import ambassador from './documents/ambassador';
@@ -57,6 +58,7 @@ export default createSchema({
     mentionsLegalesPageBlock,
     homePageBlock,
     timeSlot,
+    pressContact,
     // _____________________
     //DOCUMENTS TYPES
     // The following are document types which will appear
