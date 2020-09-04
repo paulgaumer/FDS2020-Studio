@@ -98,6 +98,7 @@ export default {
       name: 'map',
       title: 'Adresse',
       type: 'addressGps',
+      validation: (Rule) => Rule.required(),
     },
     // DATE & HOURS FIELD
     {
