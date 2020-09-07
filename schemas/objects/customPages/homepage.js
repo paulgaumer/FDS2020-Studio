@@ -3,20 +3,27 @@ export default {
   name: 'homePageBlock',
   type: 'object',
   fieldsets: [
-    { name: 'features', title: 'A propos de la Fête de la Science' },
-    { name: 'instagram', title: "A propos d'Instagram" },
+    { name: 'heroFieldSet', title: 'Haut de Page' },
+    { name: 'featuresFieldSet', title: 'A propos de la Fête de la Science' },
+    { name: 'instagramFieldSet', title: "A propos d'Instagram" },
   ],
   fields: [
+    {
+      name: 'heroButton',
+      title: 'Texte du bouton',
+      type: 'string',
+      fieldset: 'heroFieldSet',
+    },
     {
       name: 'featuresTitle',
       title: 'Titre de section',
       type: 'string',
-      fieldset: 'features',
+      fieldset: 'featuresFieldSet',
     },
     {
       name: 'features',
       title: 'Points de description',
-      fieldset: 'features',
+      fieldset: 'featuresFieldSet',
       type: 'array',
       of: [
         {
@@ -28,13 +35,13 @@ export default {
       name: 'featuresButton',
       title: 'Texte du bouton',
       type: 'string',
-      fieldset: 'features',
+      fieldset: 'featuresFieldSet',
     },
     {
       name: 'instagramTitle',
       title: 'Titre Instagram',
       type: 'string',
-      fieldset: 'instagram',
+      fieldset: 'instagramFieldSet',
     },
   ],
   preview: {

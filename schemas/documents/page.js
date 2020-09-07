@@ -14,7 +14,10 @@ export default {
         { type: 'covidPageBlock' },
         { type: 'scolairesPageBlock' },
         { type: 'multimediaPageBlock' },
+        { type: 'eventsIndexPageBlock' },
         { type: 'homePageBlock' },
+        { type: 'featuredBlock' },
+        { type: 'villageBlock' },
         { type: 'footerBlock' },
       ],
       options: {

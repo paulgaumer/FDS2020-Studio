@@ -13,9 +13,12 @@ import editorialPageBlock from './objects/customPages/editorialPage';
 import contactPageBlock from './objects/customPages/contactPage';
 import homePageBlock from './objects/customPages/homePage';
 import covidPageBlock from './objects/customPages/covidPage';
+import eventsIndexPageBlock from './objects/customPages/eventsIndexPage';
 import multimediaPageBlock from './objects/customPages/multimediaPage';
 import scolairesPageBlock from './objects/customPages/scolairesPage';
 import footerBlock from './objects/customPages/footerBlock.js';
+import featuredBlock from './objects/customPages/featuredBlock.js';
+import villageBlock from './objects/customPages/villageBlock.js';
 import mentionsLegalesPageBlock from './objects/customPages/mentionsLegalesPage';
 import youtube from './objects/youtube';
 import featureDesc from './objects/featureDesc';
@@ -59,9 +62,12 @@ export default createSchema({
     editorialPageBlock,
     contactPageBlock,
     multimediaPageBlock,
+    eventsIndexPageBlock,
     covidPageBlock,
     scolairesPageBlock,
     footerBlock,
+    featuredBlock,
+    villageBlock,
     mentionsLegalesPageBlock,
     homePageBlock,
     timeSlot,
