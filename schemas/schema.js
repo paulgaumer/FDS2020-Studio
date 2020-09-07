@@ -13,6 +13,7 @@ import editorialPageBlock from './objects/customPages/editorialPage';
 import contactPageBlock from './objects/customPages/contactPage';
 import homePageBlock from './objects/customPages/homePage';
 import covidPageBlock from './objects/customPages/covidPage';
+import scolairesPageBlock from './objects/customPages/scolairesPage';
 import footerBlock from './objects/customPages/footerBlock.js';
 import mentionsLegalesPageBlock from './objects/customPages/mentionsLegalesPage';
 import youtube from './objects/youtube';
@@ -56,6 +57,7 @@ export default createSchema({
     editorialPageBlock,
     contactPageBlock,
     covidPageBlock,
+    scolairesPageBlock,
     footerBlock,
     mentionsLegalesPageBlock,
     homePageBlock,
