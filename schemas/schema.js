@@ -13,6 +13,7 @@ import editorialPageBlock from './objects/customPages/editorialPage';
 import contactPageBlock from './objects/customPages/contactPage';
 import homePageBlock from './objects/customPages/homePage';
 import covidPageBlock from './objects/customPages/covidPage';
+import multimediaPageBlock from './objects/customPages/multimediaPage';
 import scolairesPageBlock from './objects/customPages/scolairesPage';
 import footerBlock from './objects/customPages/footerBlock.js';
 import mentionsLegalesPageBlock from './objects/customPages/mentionsLegalesPage';
@@ -32,6 +33,7 @@ import format from './documents/format';
 import audience from './documents/audience';
 import projectOwner from './documents/projectOwner';
 import event from './documents/event';
+import onlineEvent from './documents/onlineEvent';
 import page from './documents/page';
 import contact from './documents/contact';
 import pressKit from './documents/pressKit';
@@ -56,6 +58,7 @@ export default createSchema({
     richDate,
     editorialPageBlock,
     contactPageBlock,
+    multimediaPageBlock,
     covidPageBlock,
     scolairesPageBlock,
     footerBlock,
@@ -76,6 +79,7 @@ export default createSchema({
     audience,
     projectOwner,
     event,
+    onlineEvent,
     page,
     contact,
     pressKit,

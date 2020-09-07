@@ -13,6 +13,7 @@ export default {
         { type: 'contactPageBlock' },
         { type: 'covidPageBlock' },
         { type: 'scolairesPageBlock' },
+        { type: 'multimediaPageBlock' },
         { type: 'homePageBlock' },
         { type: 'footerBlock' },
       ],

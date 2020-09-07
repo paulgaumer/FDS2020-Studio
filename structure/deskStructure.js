@@ -6,6 +6,7 @@ import {
   GoPerson,
   GoBriefcase,
   GoBroadcast,
+  GoPlay,
 } from 'react-icons/go';
 import { FaParagraph, FaCampground } from 'react-icons/fa';
 import event from './event';
@@ -15,6 +16,9 @@ export default () =>
     .title('Gestion de contenu')
     .items([
       event,
+      S.documentTypeListItem('onlineEvent')
+        .title('Evénements en ligne')
+        .icon(GoPlay),
       S.documentTypeListItem('village')
         .title('Villages des Sciences')
         .icon(FaCampground),
