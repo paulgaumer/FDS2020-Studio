@@ -29,6 +29,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'url',
+      title: 'Lien Url',
+      type: 'url',
+    },
+    {
       name: 'logo',
       title: 'Logo',
       type: 'image',

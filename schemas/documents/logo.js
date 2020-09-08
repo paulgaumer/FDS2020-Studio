@@ -11,8 +11,8 @@ export default {
     },
     {
       name: 'partners',
-      title: 'Partenaires',
-      description: `Ajouter un ou plusieurs tags décrivant les partenariats de cet acteur.`,
+      title: 'Régions Partenaires',
+      description: `Ajouter un ou plusieurs tags décrivant les régions partenaires de cet acteur, afin de faire apparaitre son logo sur les pages régionales`,
       type: 'array',
       of: [
         {
