@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { StaticMap, Marker } from 'react-map-gl';
 import client from 'part:@sanity/base/client';
@@ -26,76 +26,34 @@ import Pin from './Pin';
 //   );
 // };
 
-class GeopointInput extends React.Component {
-  static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    markers: PropTypes.arrayOf(
-      PropTypes.shape({
-        type: PropTypes.string,
-      })
-    ),
-    value: PropTypes.shape({
-      lat: PropTypes.number,
-      lng: PropTypes.number,
-      address: PropTypes.string,
-    }),
-    type: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string,
-    }),
-  };
+const GeopointInput = (props) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentVillage, setCurrentVillage] = useState(null);
+  const query = "*[_type == 'village' && _id == $id]";
 
-  static defaultProps = {
-    markers: [],
-  };
-
-  static contextTypes = {
-    intl: PropTypes.shape({
-      locale: PropTypes.string,
-    }),
-  };
-
-  constructor() {
-    super();
-
-    this.handleToggleModal = this.handleToggleModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-
-    this.state = {
-      modalOpen: false,
-      query: "*[_type == 'village' && _id == $id] ",
-      village: null,
-    };
-  }
-
-  componentDidMount() {
-    console.log(this.props.document);
-    if (!this.props.document.map && this.props.document.village) {
-      const village = this.props.document.village;
+  useEffect(() => {
+    console.log(props.document);
+    if (!props.document.map && props.document.village) {
+      const village = props.document.village;
       // Fetch initial value
       client
-        .fetch(this.state.query, {
+        .fetch(query, {
           id: village._ref,
         })
         .then((result) => {
           console.log(result);
-          this.setState({ village: result });
+          setCurrentVillage(result);
         });
     }
-  }
+  }, [currentVillage]);
 
-  componentDidUpdate() {
-    console.log('COMPONENT UPDATED');
-    console.log(this.state.village);
-  }
+  const handleToggleModal = () => {
+    setModalOpen(!modalOpen);
+  };
 
-  handleToggleModal() {
-    this.setState((prevState) => ({ modalOpen: !prevState.modalOpen }));
-  }
-
-  handleChange = (lngLat, address) => {
+  const handleChange = (lngLat, address) => {
     console.log(address);
-    const { type, onChange } = this.props;
+    const { type, onChange } = props;
     onChange(
       PatchEvent.from([
         setIfMissing({
@@ -108,118 +66,144 @@ class GeopointInput extends React.Component {
     );
   };
 
-  handleClear = () => {
-    const { onChange } = this.props;
+  const handleClear = () => {
+    const { onChange } = props;
     onChange(PatchEvent.from(unset()));
   };
 
-  handleCloseModal() {
-    this.setState({ modalOpen: false });
-  }
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
 
-  render() {
-    const { value, type, markers } = this.props;
+  const { value, type, markers } = props;
 
-    if (!config || !config.apiKey) {
-      return (
-        <div>
-          <p>
-            The{' '}
-            <a href="https://sanity.io/docs/schema-types/geopoint-type">
-              Geopoint type
-            </a>{' '}
-            needs a Mapbox API token.
-          </p>
-          <p>
-            Please enter the API token with access to these services in
-            <code style={{ whitespace: 'nowrap' }}>
-              `&lt;project-root&gt;/config/mapbox-input.json`
-            </code>
-          </p>
-        </div>
-      );
-    }
-
+  if (!config || !config.apiKey) {
     return (
-      <Fieldset
-        legend={type.title}
-        description={type.description}
-        className={styles.root}
-        markers={markers}
-      >
-        {value && (
-          <div>
-            <div className={styles.addressDisplay}>
-              <p>ADRESSE</p>
-              <input
-                id="myAddress"
-                value={value.address}
-                style={{ width: '100%', marginTop: '.5em' }}
-                onChange={(e) => {
-                  const { type, onChange } = this.props;
-                  onChange(
-                    PatchEvent.from([
-                      setIfMissing({
-                        _type: type.name,
-                      }),
-                      set(e.currentTarget.value, ['address']),
-                    ])
-                  );
-                }}
-              />
-            </div>
-            <StaticMap
-              width="100%"
-              height={300}
-              latitude={value.lat}
-              longitude={value.lng}
-              zoom={13}
-              mapboxApiAccessToken={config.apiKey}
-            >
-              <Marker latitude={value.lat} longitude={value.lng}>
-                <Pin />
-              </Marker>
-            </StaticMap>
-          </div>
-        )}
-
-        <div className={styles.functions}>
-          <Button onClick={this.handleToggleModal}>
-            {value ? 'Modifier' : 'Rentrer une adresse'}
-          </Button>
-
-          {value && (
-            <Button type="button" onClick={this.handleClear}>
-              Supprimer
-            </Button>
-          )}
-        </div>
-
-        {this.state.modalOpen && (
-          <Dialog
-            title="Place on map"
-            onClose={this.handleCloseModal}
-            onCloseClick={this.handleCloseModal}
-            onOpen={this.handleOpenModal}
-            message="Select location by dragging the marker or search for a place"
-            isOpen={this.state.modalOpen}
-          >
-            <div className={styles.dialogInner}>
-              <GeopointSelect
-                value={value}
-                apiKey={config.apiKey}
-                onChange={this.handleChange}
-                defaultLocation={config.defaultLocation}
-                defaultZoom={config.defaultZoom}
-                locale="fr"
-                // locale={getLocale(this.context)}
-              />
-            </div>
-          </Dialog>
-        )}
-      </Fieldset>
+      <div>
+        <p>
+          The{' '}
+          <a href="https://sanity.io/docs/schema-types/geopoint-type">
+            Geopoint type
+          </a>{' '}
+          needs a Mapbox API token.
+        </p>
+        <p>
+          Please enter the API token with access to these services in
+          <code style={{ whitespace: 'nowrap' }}>
+            `&lt;project-root&gt;/config/mapbox-input.json`
+          </code>
+        </p>
+      </div>
     );
   }
-}
+
+  return (
+    <Fieldset
+      legend={type.title}
+      description={type.description}
+      className={styles.root}
+      markers={markers}
+    >
+      {value && (
+        <div>
+          <div className={styles.addressDisplay}>
+            <p>ADRESSE</p>
+            <input
+              id="myAddress"
+              value={value.address}
+              style={{ width: '100%', marginTop: '.5em' }}
+              onChange={(e) => {
+                const { type, onChange } = props;
+                onChange(
+                  PatchEvent.from([
+                    setIfMissing({
+                      _type: type.name,
+                    }),
+                    set(e.currentTarget.value, ['address']),
+                  ])
+                );
+              }}
+            />
+          </div>
+          <StaticMap
+            width="100%"
+            height={300}
+            latitude={value.lat}
+            longitude={value.lng}
+            zoom={13}
+            mapboxApiAccessToken={config.apiKey}
+          >
+            <Marker latitude={value.lat} longitude={value.lng}>
+              <Pin />
+            </Marker>
+          </StaticMap>
+        </div>
+      )}
+
+      <div className={styles.functions}>
+        <Button onClick={handleToggleModal}>
+          {value ? 'Modifier' : 'Rentrer une adresse'}
+        </Button>
+
+        {value && (
+          <Button type="button" onClick={handleClear}>
+            Supprimer
+          </Button>
+        )}
+      </div>
+
+      {modalOpen && (
+        <Dialog
+          title="Place on map"
+          onClose={handleCloseModal}
+          onCloseClick={handleCloseModal}
+          onOpen={handleOpenModal}
+          message="Select location by dragging the marker or search for a place"
+          isOpen={modalOpen}
+        >
+          <div className={styles.dialogInner}>
+            <GeopointSelect
+              value={value}
+              apiKey={config.apiKey}
+              onChange={handleChange}
+              defaultLocation={config.defaultLocation}
+              defaultZoom={config.defaultZoom}
+              locale="fr"
+              // locale={getLocale(this.context)}
+            />
+          </div>
+        </Dialog>
+      )}
+    </Fieldset>
+  );
+};
 
 export default withDocument(GeopointInput);
+
+GeopointInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  markers: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string,
+    })
+  ),
+  value: PropTypes.shape({
+    lat: PropTypes.number,
+    lng: PropTypes.number,
+    address: PropTypes.string,
+  }),
+  type: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+  }),
+};
+
+GeopointInput.defaultProps = {
+  markers: [],
+};
+
+GeopointInput.contextTypes = {
+  intl: PropTypes.shape({
+    locale: PropTypes.string,
+  }),
+};
