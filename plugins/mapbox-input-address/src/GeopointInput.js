@@ -1,7 +1,9 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticMap, Marker } from 'react-map-gl';
+import client from 'part:@sanity/base/client';
 import config from 'config:mapbox-input';
+import { withDocument } from 'part:@sanity/form-builder';
 import Button from 'part:@sanity/components/buttons/default';
 import Dialog from 'part:@sanity/components/dialogs/default';
 import Fieldset from 'part:@sanity/components/fieldsets/default';
@@ -61,7 +63,30 @@ class GeopointInput extends React.Component {
 
     this.state = {
       modalOpen: false,
+      query: "*[_type == 'village' && _id == $id] ",
+      village: null,
     };
+  }
+
+  componentDidMount() {
+    console.log(this.props.document);
+    if (!this.props.document.map && this.props.document.village) {
+      const village = this.props.document.village;
+      // Fetch initial value
+      client
+        .fetch(this.state.query, {
+          id: village._ref,
+        })
+        .then((result) => {
+          console.log(result);
+          this.setState({ village: result });
+        });
+    }
+  }
+
+  componentDidUpdate() {
+    console.log('COMPONENT UPDATED');
+    console.log(this.state.village);
   }
 
   handleToggleModal() {
@@ -197,4 +222,4 @@ class GeopointInput extends React.Component {
   }
 }
 
-export default GeopointInput;
+export default withDocument(GeopointInput);
