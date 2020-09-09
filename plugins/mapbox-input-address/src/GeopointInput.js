@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { StaticMap, Marker } from 'react-map-gl';
 import client from 'part:@sanity/base/client';
@@ -26,44 +26,82 @@ import Pin from './Pin';
 //   );
 // };
 
-const GeopointInput = (props) => {
+const GeopointInput = (props, context) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentVillageRef, setCurrentVillageRef] = useState(null);
   const [currentVillage, setCurrentVillage] = useState(null);
+  const [currentEvent, setCurrentEvent] = useState(null);
   const query = "*[_type == 'village' && _id == $id]";
 
-  useEffect(() => {
-    console.log(props.document);
-    if (!props.document.map && props.document.village) {
-      const village = props.document.village;
-      // Fetch initial value
-      client
-        .fetch(query, {
-          id: village._ref,
-        })
-        .then((result) => {
-          console.log(result);
-          setCurrentVillage(result);
-        });
-    }
-  }, [currentVillage]);
-
-  const handleToggleModal = () => {
-    setModalOpen(!modalOpen);
-  };
-
-  const handleChange = (lngLat, address) => {
-    console.log(address);
+  const updateMapValues = (mapObj) => {
     const { type, onChange } = props;
     onChange(
       PatchEvent.from([
         setIfMissing({
           _type: type.name,
         }),
-        set(lngLat[1], ['lat']),
-        set(lngLat[0], ['lng']),
-        set(address, ['address']),
+        set(mapObj.lat, ['lat']),
+        set(mapObj.lng, ['lng']),
+        set(mapObj.address, ['address']),
       ])
     );
+  };
+
+  useEffect(() => {
+    if (currentVillageRef) {
+      client
+        .fetch(query, {
+          id: currentVillageRef,
+        })
+        .then((result) => {
+          console.log(result);
+          setCurrentVillage(result[0]);
+        });
+    }
+  }, [currentVillageRef]);
+
+  useEffect(() => {
+    if (currentVillage) {
+      const { lat, lng, address } = currentVillage.map;
+      if (!currentEvent.map) {
+        updateMapValues(currentVillage.map);
+      } else if (
+        currentEvent.map.lat !== lat ||
+        currentEvent.map.lng !== lng ||
+        currentEvent.map.address !== address
+      ) {
+        updateMapValues(currentVillage.map);
+      }
+    }
+  }, [currentVillage]);
+
+  const handleToggleModal = async () => {
+    console.log(props.document);
+    if (props.document.village) {
+      setCurrentVillageRef(props.document.village._ref);
+    }
+    setCurrentEvent(props.document);
+    setModalOpen(!modalOpen);
+  };
+
+  const handleChange = (lngLat, address) => {
+    const coord = {
+      lat: lngLat[1],
+      lng: lngLat[0],
+      address: address,
+    };
+    updateMapValues(coord);
+    // const { type, onChange } = props;
+    // onChange(
+    //   PatchEvent.from([
+    //     setIfMissing({
+    //       _type: type.name,
+    //     }),
+    //     set(lngLat[1], ['lat']),
+    //     set(lngLat[0], ['lng']),
+    //     set(address, ['address']),
+    //   ])
+    // );
   };
 
   const handleClear = () => {
@@ -98,83 +136,85 @@ const GeopointInput = (props) => {
   }
 
   return (
-    <Fieldset
-      legend={type.title}
-      description={type.description}
-      className={styles.root}
-      markers={markers}
-    >
-      {value && (
-        <div>
-          <div className={styles.addressDisplay}>
-            <p>ADRESSE</p>
-            <input
-              id="myAddress"
-              value={value.address}
-              style={{ width: '100%', marginTop: '.5em' }}
-              onChange={(e) => {
-                const { type, onChange } = props;
-                onChange(
-                  PatchEvent.from([
-                    setIfMissing({
-                      _type: type.name,
-                    }),
-                    set(e.currentTarget.value, ['address']),
-                  ])
-                );
-              }}
-            />
-          </div>
-          <StaticMap
-            width="100%"
-            height={300}
-            latitude={value.lat}
-            longitude={value.lng}
-            zoom={13}
-            mapboxApiAccessToken={config.apiKey}
-          >
-            <Marker latitude={value.lat} longitude={value.lng}>
-              <Pin />
-            </Marker>
-          </StaticMap>
-        </div>
-      )}
-
-      <div className={styles.functions}>
-        <Button onClick={handleToggleModal}>
-          {value ? 'Modifier' : 'Rentrer une adresse'}
-        </Button>
-
+    <div data-name="custom-address-field">
+      <Fieldset
+        legend={type.title}
+        description={type.description}
+        className={styles.root}
+        markers={markers}
+      >
         {value && (
-          <Button type="button" onClick={handleClear}>
-            Supprimer
-          </Button>
-        )}
-      </div>
-
-      {modalOpen && (
-        <Dialog
-          title="Place on map"
-          onClose={handleCloseModal}
-          onCloseClick={handleCloseModal}
-          onOpen={handleOpenModal}
-          message="Select location by dragging the marker or search for a place"
-          isOpen={modalOpen}
-        >
-          <div className={styles.dialogInner}>
-            <GeopointSelect
-              value={value}
-              apiKey={config.apiKey}
-              onChange={handleChange}
-              defaultLocation={config.defaultLocation}
-              defaultZoom={config.defaultZoom}
-              locale="fr"
-              // locale={getLocale(this.context)}
-            />
+          <div>
+            <div className={styles.addressDisplay}>
+              <p>ADRESSE</p>
+              <input
+                id="myAddress"
+                value={value.address}
+                style={{ width: '100%', marginTop: '.5em' }}
+                onChange={(e) => {
+                  const { type, onChange } = props;
+                  onChange(
+                    PatchEvent.from([
+                      setIfMissing({
+                        _type: type.name,
+                      }),
+                      set(e.currentTarget.value, ['address']),
+                    ])
+                  );
+                }}
+              />
+            </div>
+            <StaticMap
+              width="100%"
+              height={300}
+              latitude={value.lat}
+              longitude={value.lng}
+              zoom={13}
+              mapboxApiAccessToken={config.apiKey}
+            >
+              <Marker latitude={value.lat} longitude={value.lng}>
+                <Pin />
+              </Marker>
+            </StaticMap>
           </div>
-        </Dialog>
-      )}
-    </Fieldset>
+        )}
+
+        <div className={styles.functions}>
+          <Button onClick={handleToggleModal}>
+            {value ? 'Modifier' : 'Rentrer une adresse'}
+          </Button>
+
+          {value && (
+            <Button type="button" onClick={handleClear}>
+              Supprimer
+            </Button>
+          )}
+        </div>
+
+        {modalOpen && (
+          <Dialog
+            title="Place on map"
+            onClose={handleCloseModal}
+            onCloseClick={handleCloseModal}
+            // onOpen={handleOpenModal}
+            message="Select location by dragging the marker or search for a place"
+            isOpen={modalOpen}
+          >
+            <div className={styles.dialogInner}>
+              <GeopointSelect
+                value={value}
+                apiKey={config.apiKey}
+                onChange={handleChange}
+                defaultLocation={config.defaultLocation}
+                defaultZoom={config.defaultZoom}
+                locale="fr"
+                // locale={getLocale(this.context)}
+              />
+            </div>
+          </Dialog>
+        )}
+      </Fieldset>
+    </div>
   );
 };
 
