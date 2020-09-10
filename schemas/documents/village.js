@@ -72,7 +72,7 @@ export default {
       title: 'Dates et Horaires',
       type: 'array',
       of: [{ type: 'timeSlot' }],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().min(1),
     },
     // IMAGE
     {

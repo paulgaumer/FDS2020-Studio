@@ -23,13 +23,18 @@ export default {
       title: 'Date de début',
       description: 'Choisir une date',
       fieldset: 'startField',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'startTime',
       type: 'string',
       title: 'Heure de début',
-      description: 'Respecter le format: "09:00"',
+      description: 'Respecter le format: "00:00"',
       fieldset: 'startField',
+      validation: (Rule) =>
+        Rule.required().regex(/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/, {
+          name: '00:00',
+        }),
     },
     {
       name: 'endDate',
@@ -37,13 +42,18 @@ export default {
       title: 'Date de fin',
       description: 'Choisir une date',
       fieldset: 'endField',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'endTime',
       type: 'string',
       title: 'Heure de fin',
-      description: 'Respecter le format: "09:00"',
+      description: 'Respecter le format: "00:00"',
       fieldset: 'endField',
+      validation: (Rule) =>
+        Rule.required().regex(/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/, {
+          name: '00:00',
+        }),
     },
   ],
   preview: {
