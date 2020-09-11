@@ -3,12 +3,21 @@ export default {
   type: 'document',
   title: 'Paramètres du site',
   __experimental_actions: ['update', /* "create", "delete", */ 'publish'],
-  fieldsets: [{ name: 'instagramField', title: 'Instagram' }],
+  fieldsets: [
+    { name: 'instagramField', title: 'Instagram' },
+    { name: 'covidField', title: 'Covid-19' },
+  ],
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Titre',
+    },
+    {
+      name: 'showCovid',
+      type: 'boolean',
+      title: 'Afficher les informations Covid',
+      fieldset: 'covidField',
     },
     {
       name: 'instagramHashtag',
