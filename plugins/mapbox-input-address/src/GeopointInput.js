@@ -47,6 +47,7 @@ const GeopointInput = (props, context) => {
     );
   };
 
+  // Check if the event is linked to a village. If so, get the village object
   useEffect(() => {
     if (currentVillageRef) {
       client
@@ -60,6 +61,7 @@ const GeopointInput = (props, context) => {
     }
   }, [currentVillageRef]);
 
+  // Update the event's address if the village's address is different
   useEffect(() => {
     if (currentVillage) {
       const { lat, lng, address } = currentVillage.map;
@@ -75,6 +77,7 @@ const GeopointInput = (props, context) => {
     }
   }, [currentVillage]);
 
+  // Opening the modal activates checking if a village exists and use its address
   const handleToggleModal = async () => {
     console.log(props.document);
     if (props.document.village) {
