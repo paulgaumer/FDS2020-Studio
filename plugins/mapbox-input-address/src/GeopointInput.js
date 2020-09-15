@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import { AiOutlineWarning } from 'react-icons/ai';
 import { StaticMap, Marker } from 'react-map-gl';
 import client from 'part:@sanity/base/client';
 import config from 'config:mapbox-input';
@@ -31,6 +32,7 @@ const GeopointInput = (props, context) => {
   const [currentVillageRef, setCurrentVillageRef] = useState(null);
   const [currentVillage, setCurrentVillage] = useState(null);
   const [currentEvent, setCurrentEvent] = useState(null);
+  const [showWarningMessage, setShowWarningMessage] = useState(false);
   const query = "*[_type == 'village' && _id == $id]";
 
   const updateMapValues = (mapObj) => {
@@ -63,7 +65,7 @@ const GeopointInput = (props, context) => {
 
   // Update the event's address if the village's address is different
   useEffect(() => {
-    if (currentVillage) {
+    if (currentVillage && currentVillage.map) {
       const { lat, lng, address } = currentVillage.map;
       if (!currentEvent.map) {
         updateMapValues(currentVillage.map);
@@ -74,12 +76,14 @@ const GeopointInput = (props, context) => {
       ) {
         updateMapValues(currentVillage.map);
       }
+    } else if (currentVillage && !currentVillage.map) {
+      setShowWarningMessage(true);
     }
   }, [currentVillage]);
 
   // Opening the modal activates checking if a village exists and use its address
   const handleToggleModal = async () => {
-    console.log(props.document);
+    // console.log(props.document);
     if (props.document.village) {
       setCurrentVillageRef(props.document.village._ref);
     }
@@ -150,6 +154,31 @@ const GeopointInput = (props, context) => {
           <div>
             <div className={styles.addressDisplay}>
               <p>ADRESSE</p>
+              {showWarningMessage && (
+                <p
+                  style={{
+                    fontSize: '0.875rem',
+                    fontStyle: 'italic',
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: 'red',
+                  }}
+                >
+                  <span
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <AiOutlineWarning />
+                  </span>
+                  <span style={{ paddingLeft: '3px' }}>
+                    Attention, le Village des Sciences associé n'a pas d'adresse
+                    enregistrée
+                  </span>
+                </p>
+              )}
               <input
                 id="myAddress"
                 value={value.address}
