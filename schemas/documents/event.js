@@ -7,6 +7,7 @@ export default {
     bookingRecommanded: false,
     featured: false,
     education: false,
+    eventCanceled: false,
   },
   fieldsets: [
     { name: 'featuredField', title: 'Labels' },
@@ -26,6 +27,7 @@ export default {
         collapsed: true, // Defines if the fieldset should be collapsed by default or not
       },
     },
+    { name: 'imageField', title: "Image d'illustration" },
   ],
   fields: [
     {
@@ -62,6 +64,12 @@ export default {
     {
       name: 'education',
       title: 'Label Scolaire',
+      type: 'boolean',
+      fieldset: 'featuredField',
+    },
+    {
+      name: 'eventCanceled',
+      title: 'Label Annulé',
       type: 'boolean',
       fieldset: 'featuredField',
     },
@@ -133,6 +141,12 @@ export default {
       type: 'string',
       fieldset: 'bookingField',
     },
+    {
+      name: 'bookingWebsite',
+      title: 'Site Web',
+      type: 'url',
+      fieldset: 'bookingField',
+    },
     // THEME
     {
       name: 'theme',
@@ -183,10 +197,18 @@ export default {
       name: 'image',
       title: 'Image',
       type: 'image',
+      fieldset: 'imageField',
       options: {
         hotspot: true,
       },
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'eventImageCredits',
+      title: 'Crédits',
+      description: '(optionnel - texte, url...)',
+      type: 'string',
+      fieldset: 'imageField',
     },
   ],
 
