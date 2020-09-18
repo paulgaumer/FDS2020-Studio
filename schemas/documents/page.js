@@ -15,6 +15,7 @@ export default {
         { type: 'scolairesPageBlock' },
         { type: 'multimediaPageBlock' },
         { type: 'eventsIndexPageBlock' },
+        { type: 'mentionsLegalesPageBlock' },
         { type: 'homePageBlock' },
         { type: 'featuredBlock' },
         { type: 'villageBlock' },
