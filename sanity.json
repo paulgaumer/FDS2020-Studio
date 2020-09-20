@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "Fête de la Science 2020"
+    "name": "Fête de la Science Pays de la Loire"
   },
   "api": {
-    "projectId": "uql6kgt5",
+    "projectId": "xpg3ofue",
     "dataset": "production"
   },
   "plugins": [
