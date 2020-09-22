@@ -6,6 +6,7 @@ export default {
   fieldsets: [
     { name: 'instagramField', title: 'Instagram' },
     { name: 'covidField', title: 'Covid-19' },
+    { name: 'quizField', title: 'Quiz Popup' },
   ],
   fields: [
     {
@@ -18,6 +19,12 @@ export default {
       type: 'boolean',
       title: 'Afficher les informations Covid',
       fieldset: 'covidField',
+    },
+    {
+      name: 'showQuiz',
+      type: 'boolean',
+      title: 'Afficher le Quiz',
+      fieldset: 'quizField',
     },
     {
       name: 'instagramHashtag',
