@@ -2,9 +2,11 @@ export default {
   name: 'village',
   title: 'Village des Sciences',
   type: 'document',
-
+  initialValue: {
+    eventCanceled: false,
+  },
   fieldsets: [
-    { name: 'featuredField', title: '' },
+    { name: 'featuredField', title: 'Labels' },
     {
       name: 'bookingField',
       title: 'Réservation',
@@ -30,6 +32,12 @@ export default {
         maxLength: 96,
       },
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'eventCanceled',
+      title: 'Label Annulé',
+      type: 'boolean',
+      fieldset: 'featuredField',
     },
     {
       name: 'description',

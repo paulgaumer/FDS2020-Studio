@@ -2,8 +2,20 @@ export default {
   name: 'onlineEvent',
   title: 'Evenement en ligne',
   type: 'document',
-  initialValue: {},
-  fieldsets: [],
+  initialValue: {
+    bookingRequired: false,
+    bookingRecommanded: false,
+  },
+  fieldsets: [
+    {
+      name: 'bookingField',
+      title: 'Réservation',
+      options: {
+        collapsible: true, // Makes the whole fieldset collapsible
+        collapsed: true, // Defines if the fieldset should be collapsed by default or not
+      },
+    },
+  ],
   fields: [
     {
       name: 'title',
@@ -31,7 +43,36 @@ export default {
       name: 'mediaUrl',
       title: 'Lien externe vers le Media',
       type: 'url',
-      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'bookingRequired',
+      title: 'Réservation Obligatoire',
+      type: 'boolean',
+      fieldset: 'bookingField',
+    },
+    {
+      name: 'bookingRecommanded',
+      title: 'Réservation Conseillée',
+      type: 'boolean',
+      fieldset: 'bookingField',
+    },
+    {
+      name: 'bookingEmail',
+      title: 'Email',
+      type: 'string',
+      fieldset: 'bookingField',
+    },
+    {
+      name: 'bookingPhone',
+      title: 'Téléphone',
+      type: 'string',
+      fieldset: 'bookingField',
+    },
+    {
+      name: 'bookingWebsite',
+      title: 'Site Web',
+      type: 'url',
+      fieldset: 'bookingField',
     },
     {
       name: 'projectOwners',
