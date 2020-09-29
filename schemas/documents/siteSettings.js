@@ -7,6 +7,7 @@ export default {
     { name: 'instagramField', title: 'Instagram' },
     { name: 'covidField', title: 'Covid-19' },
     { name: 'quizField', title: 'Quiz Popup' },
+    { name: 'backgroundVideoField', title: "Video D'Arrière Plan" },
   ],
   fields: [
     {
@@ -44,6 +45,21 @@ export default {
       description:
         "Les meta tags par défaut sont définis ici. Ils définissent la manière dont le site apparait lors d'une recherche Google ou d'un partage sur les réseaux sociaux",
       type: 'openGraph',
+    },
+    {
+      name: 'videoLink',
+      type: 'url',
+      title: 'Lien Vidéo',
+      description:
+        "Attention à l'origine de la vidéo! Les liens Youtube ne fonctionneront pas. Privilégier Cloudinary.",
+      fieldset: 'backgroundVideoField',
+    },
+    {
+      name: 'videoPlaceholder',
+      type: 'image',
+      title: 'Image Placeholder',
+      description: "Image s'affichant pendant le chargement de la vidéo.",
+      fieldset: 'backgroundVideoField',
     },
   ],
 };
