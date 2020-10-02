@@ -34,6 +34,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'summary',
+      title: 'Résumé',
+      type: 'text',
+      rows: 5,
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'blockContent',
