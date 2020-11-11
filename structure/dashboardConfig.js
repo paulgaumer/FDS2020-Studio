@@ -9,9 +9,9 @@ export default {
         sites: [
           {
             title: 'Fête de la Science, Pays de la Loire',
-            apiId: '35b9d539-983d-41f5-8f55-0bfe5da3e7d2',
-            buildHookId: '5f51eb52def3a25e059e2645',
-            name: 'staging-fds-pdl2020',
+            apiId: '699d31df-6378-4d92-bc43-a0b61ea0aa4e',
+            buildHookId: '5faad0490bd16c0ed63362b2',
+            name: 'Sanity Hook',
           },
         ],
       },
