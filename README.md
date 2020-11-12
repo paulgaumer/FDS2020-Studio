@@ -2,11 +2,11 @@
   Fete de la Science Pays de la Loire
 </h1>
 
-Back-end for the french event "Fete de la Science"
+Back-end for the event "Fete de la Science". Built with [Sanity](https://www.sanity.io)
 
-Production site: [https://staging-fds-pdl2020.netlify.app/](https://staging-fds-pdl2020.netlify.app/)
+Production site: [https://fetedelascience-paysdelaloire.fr/](https://fetedelascience-paysdelaloire.fr/)
 
-Front-End is located [here](https://github.com/paulgaumer/FDS2020-Web)
+Front-End repo is located [here](https://github.com/paulgaumer/FDS2020-Web)
 
 New to Sanity?
 
