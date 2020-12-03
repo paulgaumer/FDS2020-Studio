@@ -4,6 +4,13 @@ export default {
   title: 'Paramètres du site',
   __experimental_actions: ['update', /* "create", "delete", */ 'publish'],
   fieldsets: [
+    {
+      name: 'datesField',
+      title: "Dates de l'événement",
+      options: {
+        columns: 2,
+      },
+    },
     { name: 'instagramField', title: 'Instagram' },
     { name: 'covidField', title: 'Covid-19' },
     { name: 'quizField', title: 'Quiz Popup' },
@@ -14,6 +21,20 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Titre',
+    },
+    {
+      name: 'startDate',
+      type: 'date',
+      title: 'Début',
+      fieldset: 'datesField',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'endDate',
+      type: 'date',
+      title: 'Fin',
+      fieldset: 'datesField',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'showCovid',
