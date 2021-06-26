@@ -7,6 +7,13 @@
     "projectId": "xpg3ofue",
     "dataset": "production"
   },
+  "env": {
+    "development": {
+      "api": {
+        "dataset": "production"
+      }
+    }
+  },
   "plugins": [
     "@sanity/base",
     "@sanity/components",
@@ -27,10 +34,6 @@
     {
       "name": "part:@sanity/desk-tool/structure",
       "path": "./structure/deskStructure.js"
-    },
-    {
-      "implements": "part:@sanity/form-builder/input-resolver",
-      "path": "./parts/inputResolver.js"
     },
     {
       "implements": "part:@sanity/dashboard/config",

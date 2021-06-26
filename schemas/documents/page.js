@@ -23,7 +23,6 @@ export default {
       ],
       options: {
         editModal: 'fullscreen',
-        limit: 1,
       },
     },
     {
