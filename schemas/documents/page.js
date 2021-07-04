@@ -24,6 +24,7 @@ export default {
       options: {
         editModal: 'fullscreen',
       },
+      validation: (Rule) => Rule.required().min(1).max(1),
     },
     {
       name: 'pageName',
