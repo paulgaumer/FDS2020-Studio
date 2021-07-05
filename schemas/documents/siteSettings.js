@@ -15,6 +15,7 @@ export default {
     { name: 'covidField', title: 'Covid-19' },
     { name: 'quizField', title: 'Quiz Popup' },
     { name: 'backgroundVideoField', title: "Video D'Arrière Plan" },
+    { name: 'fdsLogoField', title: 'Logos Fête de la Science' },
   ],
   fields: [
     {
@@ -81,6 +82,20 @@ export default {
       title: 'Image Placeholder',
       description: "Image s'affichant pendant le chargement de la vidéo.",
       fieldset: 'backgroundVideoField',
+    },
+    {
+      name: 'fdsLogoWhite',
+      type: 'image',
+      title: 'Logo Principal Blanc (ex: homepage)',
+      description: 'Le format doit etre svg ou png',
+      fieldset: 'fdsLogoField',
+    },
+    {
+      name: 'fdsLogoBlack',
+      type: 'image',
+      title: 'Logo Principal Noir (ex: footer)',
+      description: 'Le format doit etre svg ou png',
+      fieldset: 'fdsLogoField',
     },
   ],
 };
