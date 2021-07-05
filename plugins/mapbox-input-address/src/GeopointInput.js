@@ -217,7 +217,11 @@ const GeopointInput = (props, context) => {
           </Button>
 
           {value && (
-            <Button type="button" onClick={handleClear}>
+            <Button
+              type="button"
+              onClick={handleClear}
+              style={{ marginLeft: '10px' }}
+            >
               Supprimer
             </Button>
           )}
