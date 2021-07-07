@@ -70,10 +70,9 @@ export default {
     },
     {
       name: 'videoLink',
-      type: 'url',
+      type: 'string',
       title: 'Lien Vidéo',
-      description:
-        "Attention à l'origine de la vidéo! Les liens Youtube ne fonctionneront pas. Privilégier Cloudinary.",
+      description: "Indiquer l'ID de la vidéo hébergée sur Google Drive",
       fieldset: 'backgroundVideoField',
     },
     {
