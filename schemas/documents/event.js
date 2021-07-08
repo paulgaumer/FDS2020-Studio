@@ -27,6 +27,7 @@ export default {
         collapsed: true, // Defines if the fieldset should be collapsed by default or not
       },
     },
+    { name: 'publicField', title: 'Public' },
     { name: 'imageField', title: "Image d'illustration" },
   ],
   fields: [
@@ -180,17 +181,20 @@ export default {
     // PUBLIC
     {
       name: 'audience',
-      title: 'Public',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: {
-            type: 'audience',
-          },
-        },
-      ],
-      validation: (Rule) => Rule.required().unique(),
+      title: 'A partir de',
+      type: 'reference',
+      to: {
+        type: 'audience',
+      },
+      fieldset: 'publicField',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'audienceCustom',
+      title: 'Tranche personnalisée',
+      description: 'optionnel',
+      type: 'string',
+      fieldset: 'publicField',
     },
     // IMAGE
     {
