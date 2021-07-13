@@ -120,17 +120,12 @@ export default {
     // PUBLIC
     {
       name: 'audience',
-      title: 'Public',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: {
-            type: 'audience',
-          },
-        },
-      ],
-      validation: (Rule) => Rule.required().unique(),
+      title: 'A partir de',
+      type: 'reference',
+      to: {
+        type: 'audience',
+      },
+      validation: (Rule) => Rule.required(),
     },
     // IMAGE
     {
