@@ -21,7 +21,7 @@ export default {
       name: 'title',
       title: 'Titre',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'slug',
@@ -31,20 +31,20 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'summary',
       title: 'Résumé',
       type: 'text',
       rows: 5,
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'blockContent',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'mediaUrl',
@@ -93,7 +93,8 @@ export default {
           },
         },
       ],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().min(1).error('Doit contenir au moins un choix'),
     },
     // DATE & HOURS FIELD
     {
@@ -115,7 +116,11 @@ export default {
           },
         },
       ],
-      validation: (Rule) => Rule.required().unique(),
+      validation: (Rule) =>
+        Rule.required()
+          .unique()
+          .min(1)
+          .error('Doit contenir au moins un choix'),
     },
     // PUBLIC
     {
@@ -125,7 +130,7 @@ export default {
       to: {
         type: 'audience',
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     // IMAGE
     {
@@ -135,7 +140,7 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
   ],
 
