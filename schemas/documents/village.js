@@ -21,7 +21,7 @@ export default {
       name: 'title',
       title: 'Titre',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'slug',
@@ -31,7 +31,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'eventCanceled',
@@ -43,7 +43,7 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'blockContent',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
 
     // {
@@ -67,7 +67,7 @@ export default {
       to: {
         type: 'department',
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'map',
@@ -80,7 +80,8 @@ export default {
       title: 'Dates et Horaires',
       type: 'array',
       of: [{ type: 'timeSlot' }],
-      validation: (Rule) => Rule.required().min(1),
+      validation: (Rule) =>
+        Rule.required().min(1).error('Doit contenir au moins un choix'),
     },
     // IMAGE
     {
@@ -90,7 +91,7 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
   ],
 
