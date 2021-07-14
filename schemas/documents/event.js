@@ -35,7 +35,7 @@ export default {
       name: 'title',
       title: 'Titre',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'slug',
@@ -45,7 +45,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'village',
@@ -78,7 +78,7 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'blockContent',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'projectOwners',
@@ -92,7 +92,8 @@ export default {
           },
         },
       ],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().min(1).error('Doit contenir au moins un choix'),
     },
     {
       name: 'department',
@@ -101,13 +102,13 @@ export default {
       to: {
         type: 'department',
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'map',
       title: 'Adresse',
       type: 'addressGps',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     // DATE & HOURS FIELD
     {
@@ -115,7 +116,8 @@ export default {
       title: 'Dates et Horaires',
       type: 'array',
       of: [{ type: 'timeSlot' }],
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().min(1).error('Doit contenir au moins un choix'),
     },
     // BOOKING FIELD
     {
@@ -161,7 +163,11 @@ export default {
           },
         },
       ],
-      validation: (Rule) => Rule.required().unique(),
+      validation: (Rule) =>
+        Rule.required()
+          .unique()
+          .min(1)
+          .error('Doit contenir au moins un choix'),
     },
     // FORMAT
     {
@@ -176,7 +182,11 @@ export default {
           },
         },
       ],
-      validation: (Rule) => Rule.required().unique(),
+      validation: (Rule) =>
+        Rule.required()
+          .unique()
+          .min(1)
+          .error('Doit contenir au moins un choix'),
     },
     // PUBLIC
     {
@@ -187,7 +197,7 @@ export default {
         type: 'audience',
       },
       fieldset: 'publicField',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'audienceCustom',
@@ -205,7 +215,7 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'eventImageCredits',
