@@ -7,7 +7,7 @@ export default {
       name: 'name',
       title: 'Nom',
       type: 'string',
-      validation: (Rule) => Rule.error('A remplir').required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'partners',

@@ -10,13 +10,13 @@ export default {
       to: {
         type: 'department',
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'name',
       title: 'Nom',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'phone',

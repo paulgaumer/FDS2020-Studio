@@ -15,7 +15,7 @@ export default {
       name: 'feature',
       title: 'Description',
       type: 'blockContent',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
   ],
   preview: {

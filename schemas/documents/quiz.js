@@ -10,7 +10,7 @@ export default {
       to: {
         type: 'department',
       },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'question',

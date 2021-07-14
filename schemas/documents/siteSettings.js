@@ -28,14 +28,14 @@ export default {
       type: 'date',
       title: 'Début',
       fieldset: 'datesField',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'endDate',
       type: 'date',
       title: 'Fin',
       fieldset: 'datesField',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'showCovid',

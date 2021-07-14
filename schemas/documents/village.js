@@ -45,21 +45,6 @@ export default {
       type: 'blockContent',
       validation: (Rule) => Rule.required().error('Obligatoire'),
     },
-
-    // {
-    //   name: 'projectOwners',
-    //   title: 'Porteurs de projet',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: {
-    //         type: 'projectOwner',
-    //       },
-    //     },
-    //   ],
-    //   validation: (Rule) => Rule.required(),
-    // },
     {
       name: 'department',
       title: 'Département',
