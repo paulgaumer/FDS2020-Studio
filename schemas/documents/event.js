@@ -197,7 +197,6 @@ export default {
         type: 'audience',
       },
       fieldset: 'publicField',
-      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'audienceCustom',
