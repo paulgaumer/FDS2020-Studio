@@ -25,6 +25,7 @@ import featureDesc from './objects/featureDesc';
 import richDate from 'part:@sanity/form-builder/input/rich-date/schema';
 import timeSlot from './objects/timeSlot';
 import pressContact from './objects/pressContact';
+import audienceCustom from './objects/audienceCustom';
 
 // DOCUMENTS
 import ambassador from './documents/ambassador';
@@ -73,6 +74,7 @@ export default createSchema({
     homePageBlock,
     timeSlot,
     pressContact,
+    audienceCustom,
     // _____________________
     //DOCUMENTS TYPES
     // The following are document types which will appear

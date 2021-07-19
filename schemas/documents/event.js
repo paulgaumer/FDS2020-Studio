@@ -200,9 +200,8 @@ export default {
     },
     {
       name: 'audienceCustom',
-      title: 'Tranche personnalisée',
-      description: 'optionnel',
-      type: 'string',
+      title: "Tranche d'age personnalisée (optionnel)",
+      type: 'audienceCustom',
       fieldset: 'publicField',
     },
     // IMAGE
