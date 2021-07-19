@@ -197,6 +197,13 @@ export default {
         type: 'audience',
       },
       fieldset: 'publicField',
+      validation: (Rule) =>
+        Rule.custom((field, context) =>
+          context.document.audienceCustom.from === undefined &&
+          field === undefined
+            ? 'Un type de public doit etre indiqué'
+            : true
+        ),
     },
     {
       name: 'audienceCustom',
