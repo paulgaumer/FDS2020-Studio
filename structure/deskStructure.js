@@ -34,7 +34,7 @@ export default () =>
         .title('Quiz Visiteurs')
         .icon(GoLightBulb),
       S.listItem()
-        .title('Quiz 2021')
+        .title('Quiz Anniversaire 2021')
         .icon(GoLightBulb)
         .child(
           S.editor()

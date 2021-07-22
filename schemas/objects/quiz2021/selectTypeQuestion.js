@@ -1,5 +1,5 @@
 export default {
-  title: 'Question de selection',
+  title: 'Question de sélection',
   name: 'selectTypeQuestion',
   type: 'object',
   fields: [

@@ -1,12 +1,12 @@
 export default {
-  title: 'Question de rédaction',
-  name: 'inputTypeQuestion',
+  title: "Question d'association",
+  name: 'associationTypeQuestion',
   type: 'object',
   fields: [
     {
       name: 'questionType',
       type: 'string',
-      initialValue: 'inputType',
+      initialValue: 'associationType',
       hidden: true,
     },
     {
@@ -19,23 +19,17 @@ export default {
       name: 'description',
       title: 'Description (optionnel)',
       type: 'blockContent',
-      // validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
-      name: 'picture',
-      title: 'Photos',
+      name: 'options',
+      title: 'Choix de réponse',
       type: 'array',
       of: [
         {
-          type: 'mainImage',
+          type: 'associationTypeOption',
         },
       ],
-    },
-    {
-      name: 'answer',
-      title: 'Réponse',
-      type: 'string',
-      validation: (Rule) => Rule.required().error('Obligatoire'),
+      validation: (Rule) => Rule.required().error('Obligatoire').min(1),
     },
     {
       name: 'answerDetails',

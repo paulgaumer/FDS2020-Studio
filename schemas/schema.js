@@ -28,7 +28,9 @@ import pressContact from './objects/pressContact';
 import audienceCustom from './objects/audienceCustom';
 import inputTypeQuestion from './objects/quiz2021/inputTypeQuestion';
 import selectTypeQuestion from './objects/quiz2021/selectTypeQuestion';
+import associationTypeQuestion from './objects/quiz2021/associationTypeQuestion';
 import selectTypeOption from './objects/quiz2021/selectTypeOption';
+import associationTypeOption from './objects/quiz2021/associationTypeOption';
 
 // DOCUMENTS
 import ambassador from './documents/ambassador';
@@ -81,7 +83,9 @@ export default createSchema({
     audienceCustom,
     inputTypeQuestion,
     selectTypeQuestion,
+    associationTypeQuestion,
     selectTypeOption,
+    associationTypeOption,
     // _____________________
     //DOCUMENTS TYPES
     // The following are document types which will appear

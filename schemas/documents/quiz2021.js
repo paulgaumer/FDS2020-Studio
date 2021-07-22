@@ -45,7 +45,11 @@ export default {
       name: 'questions',
       title: 'Questions',
       type: 'array',
-      of: [{ type: 'inputTypeQuestion' }, { type: 'selectTypeQuestion' }],
+      of: [
+        { type: 'inputTypeQuestion' },
+        { type: 'selectTypeQuestion' },
+        { type: 'associationTypeQuestion' },
+      ],
       options: {
         editModal: 'fullscreen',
       },
