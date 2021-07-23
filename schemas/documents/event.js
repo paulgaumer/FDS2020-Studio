@@ -199,7 +199,7 @@ export default {
       fieldset: 'publicField',
       validation: (Rule) =>
         Rule.custom((field, context) =>
-          context.document.audienceCustom.from === undefined &&
+          context.document?.audienceCustom?.from === undefined &&
           field === undefined
             ? 'Un type de public doit etre indiqué'
             : true
