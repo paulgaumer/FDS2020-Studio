@@ -19,7 +19,7 @@ export default {
     {
       name: 'description',
       title: 'Description (optionnel)',
-      type: 'blockContent',
+      type: 'text',
     },
     {
       name: 'picture',
