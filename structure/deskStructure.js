@@ -31,8 +31,17 @@ export default () =>
       S.documentTypeListItem('logo').title('Logos').icon(GoFileMedia),
       S.documentTypeListItem('pressKit').title('Press Kit').icon(GoBroadcast),
       S.documentTypeListItem('quizByDepartment')
-        .title('Quiz')
+        .title('Quiz Visiteurs')
         .icon(GoLightBulb),
+      S.listItem()
+        .title('Quiz Anniversaire 2021')
+        .icon(GoLightBulb)
+        .child(
+          S.editor()
+            .id('quiz2021')
+            .schemaType('quiz2021')
+            .documentId('quiz2021')
+        ),
       S.divider(),
       S.documentTypeListItem('theme').title('Thèmes').icon(GoTag),
       S.documentTypeListItem('format').title('Formats').icon(GoTag),

@@ -26,6 +26,11 @@ import richDate from 'part:@sanity/form-builder/input/rich-date/schema';
 import timeSlot from './objects/timeSlot';
 import pressContact from './objects/pressContact';
 import audienceCustom from './objects/audienceCustom';
+import inputTypeQuestion from './objects/quiz2021/inputTypeQuestion';
+import selectTypeQuestion from './objects/quiz2021/selectTypeQuestion';
+import associationTypeQuestion from './objects/quiz2021/associationTypeQuestion';
+import selectTypeOption from './objects/quiz2021/selectTypeOption';
+import associationTypeOption from './objects/quiz2021/associationTypeOption';
 
 // DOCUMENTS
 import ambassador from './documents/ambassador';
@@ -43,6 +48,7 @@ import contact from './documents/contact';
 import pressKit from './documents/pressKit';
 import village from './documents/village';
 import quizByDepartment from './documents/quiz';
+import quiz2021 from './documents/quiz2021';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -75,6 +81,11 @@ export default createSchema({
     timeSlot,
     pressContact,
     audienceCustom,
+    inputTypeQuestion,
+    selectTypeQuestion,
+    associationTypeQuestion,
+    selectTypeOption,
+    associationTypeOption,
     // _____________________
     //DOCUMENTS TYPES
     // The following are document types which will appear
@@ -94,5 +105,6 @@ export default createSchema({
     pressKit,
     village,
     quizByDepartment,
+    quiz2021,
   ]),
 });
