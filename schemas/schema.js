@@ -31,6 +31,7 @@ import selectTypeQuestion from './objects/quiz2021/selectTypeQuestion';
 import associationTypeQuestion from './objects/quiz2021/associationTypeQuestion';
 import selectTypeOption from './objects/quiz2021/selectTypeOption';
 import associationTypeOption from './objects/quiz2021/associationTypeOption';
+import quiz21ConditionsPageBlock from './objects/customPages/quiz2021ConditionsPage';
 
 // DOCUMENTS
 import ambassador from './documents/ambassador';
@@ -78,6 +79,7 @@ export default createSchema({
     villageBlock,
     mentionsLegalesPageBlock,
     homePageBlock,
+    quiz21ConditionsPageBlock,
     timeSlot,
     pressContact,
     audienceCustom,

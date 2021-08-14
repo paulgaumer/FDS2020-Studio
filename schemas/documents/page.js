@@ -20,6 +20,7 @@ export default {
         { type: 'featuredBlock' },
         { type: 'villageBlock' },
         { type: 'footerBlock' },
+        { type: 'quiz21ConditionsPageBlock' },
       ],
       options: {
         editModal: 'fullscreen',
