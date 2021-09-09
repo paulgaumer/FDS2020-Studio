@@ -15,6 +15,13 @@ export default {
       fieldset: 'heroFieldSet',
     },
     {
+      name: 'heroUrl',
+      title: 'Url du bouton',
+      type: 'string',
+      description: 'Ne pas inclure https://fetedelascience-paysdelaloire.fr/',
+      fieldset: 'heroFieldSet',
+    },
+    {
       name: 'featuresTitle',
       title: 'Titre de section',
       type: 'string',
