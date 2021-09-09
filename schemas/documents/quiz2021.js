@@ -7,13 +7,25 @@ export default {
       name: 'welcomeField',
       title: 'Acceuil',
       options: {
-        collapsible: true, // Makes the whole fieldset collapsible
-        collapsed: false, // Defines if the fieldset should be collapsed by default or not
+        collapsible: true,
+        collapsed: false,
+      },
+    },
+    {
+      name: 'sponsorsField',
+      title: 'Sponsors',
+      options: {
+        collapsible: true,
+        collapsed: false,
       },
     },
     {
       name: 'questionsField',
       title: 'Liste de questions',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
     },
     { name: 'submitField', title: 'Données et candidature' },
   ],
@@ -24,6 +36,15 @@ export default {
       type: 'string',
       initialValue: 'Quiz 2021',
       validation: (Rule) => Rule.required().error('Obligatoire'),
+      fieldset: 'welcomeField',
+    },
+    {
+      name: 'bannerImage',
+      title: "Bannière d'accueil",
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
       fieldset: 'welcomeField',
     },
     {
@@ -40,6 +61,29 @@ export default {
       initialValue: "C'est parti",
       validation: (Rule) => Rule.required().error('Obligatoire'),
       fieldset: 'welcomeField',
+    },
+    {
+      name: 'titleSponsors',
+      title: 'Titre',
+      type: 'string',
+      initialValue: 'Quiz 2021',
+      fieldset: 'sponsorsField',
+    },
+    {
+      name: 'logosSponsors',
+      title: 'Logos Sponsors',
+      type: 'array',
+      of: [
+        {
+          name: 'logo',
+          title: 'logo',
+          type: 'reference',
+          to: {
+            type: 'logo',
+          },
+        },
+      ],
+      fieldset: 'sponsorsField',
     },
     {
       name: 'questions',
