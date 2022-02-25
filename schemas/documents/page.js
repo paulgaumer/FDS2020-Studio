@@ -21,6 +21,7 @@ export default {
         { type: 'villageBlock' },
         { type: 'footerBlock' },
         { type: 'quiz21ConditionsPageBlock' },
+        { type: 'questionnairePageBlock' },
       ],
       options: {
         editModal: 'fullscreen',

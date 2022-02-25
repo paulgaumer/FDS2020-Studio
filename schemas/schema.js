@@ -32,6 +32,8 @@ import associationTypeQuestion from './objects/quiz2021/associationTypeQuestion'
 import selectTypeOption from './objects/quiz2021/selectTypeOption';
 import associationTypeOption from './objects/quiz2021/associationTypeOption';
 import quiz21ConditionsPageBlock from './objects/customPages/quiz2021ConditionsPage';
+import faqQuestion from './objects/faqQuestion';
+import questionnairePage from './objects/customPages/questionnairePage';
 
 // DOCUMENTS
 import ambassador from './documents/ambassador';
@@ -88,6 +90,8 @@ export default createSchema({
     associationTypeQuestion,
     selectTypeOption,
     associationTypeOption,
+    faqQuestion,
+    questionnairePage,
     // _____________________
     //DOCUMENTS TYPES
     // The following are document types which will appear
