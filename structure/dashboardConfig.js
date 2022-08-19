@@ -11,7 +11,7 @@ export default {
             title: 'Fête de la Science, Pays de la Loire',
             // **** PRODUCTION SITE ****
             apiId: '699d31df-6378-4d92-bc43-a0b61ea0aa4e',
-            buildHookId: '5faad0490bd16c0ed63362b2',
+            buildHookId: '6221ebd0aa6c42a589dc2b12',
             name: 'Sanity Hook',
             // *****************************
             // **** TEMP SITE ****

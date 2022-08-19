@@ -11,7 +11,10 @@ export default {
     {
       name: 'answer',
       title: 'Answer',
-      type: 'text',
+      type: 'array',
+      of: [
+        {type: 'block'}
+      ],
     },
   ],
   preview: {

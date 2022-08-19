@@ -1,10 +1,10 @@
 export default {
-  title: 'Bloc pour la page Questionnaire',
+  title: 'Bloc pour la page Appel à projets',
   name: 'questionnairePageBlock',
   type: 'object',
   fieldsets: [
     { name: 'heroFieldSet', title: 'Haut de Page' },
-    { name: 'processusFieldSet', title: 'A propos des étapes pour candidater' },
+    { name: 'documentsFieldSet', title: 'Section documents' },
     { name: 'faqFieldSet', title: "FAQ" }
   ],
   fields: [
@@ -15,25 +15,31 @@ export default {
       fieldset: 'heroFieldSet',
     },
     {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      fieldset: 'heroFieldSet',
+    },
+    {
       name: 'intro',
       title: 'Introduction',
       type: 'text',
       fieldset: 'heroFieldSet',
     },
     {
-      name: 'processusTitle',
+      name: 'documentsTitle',
       title: 'Titre de section',
       type: 'string',
-      fieldset: 'processusFieldSet',
+      fieldset: 'documentsFieldSet',
     },
     {
-      name: 'steps',
-      title: 'Etapes du processus',
-      fieldset: 'processusFieldSet',
+      name: 'documents',
+      title: 'Documents',
+      fieldset: 'documentsFieldSet',
       type: 'array',
       of: [
         {
-          type: 'text',
+          type: 'documentField',
         },
       ],
     },
@@ -57,7 +63,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: `Modifier la Homepage`,
+        title: `Modifier la page Appel à projets`,
       };
     },
   },
