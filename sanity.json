@@ -10,10 +10,34 @@
   "env": {
     "development": {
       "api": {
+        "dataset": "development"
+      }
+    },
+    "production": {
+      "api": {
         "dataset": "production"
       }
     }
   },
+  "__experimental_spaces": [
+    {
+      "name": "production",
+      "title": "Production",
+      "default": true,
+      "api": {
+        "projectId": "xpg3ofue",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "staging",
+      "title": "Test",
+      "api": {
+        "projectId": "xpg3ofue",
+        "dataset": "development"
+      }
+    }
+  ],
   "plugins": [
     "@sanity/base",
     "@sanity/components",
