@@ -10,7 +10,7 @@ export default {
     eventCanceled: false,
   },
   fieldsets: [
-    { name: 'featuredField', title: 'Labels' },
+    {name: 'featuredField', title: 'Labels'},
     {
       name: 'bookingField',
       title: 'Réservation',
@@ -27,8 +27,8 @@ export default {
         collapsed: true, // Defines if the fieldset should be collapsed by default or not
       },
     },
-    { name: 'publicField', title: 'Public' },
-    { name: 'imageField', title: "Image d'illustration" },
+    {name: 'publicField', title: 'Public'},
+    {name: 'imageField', title: "Image d'illustration"},
   ],
   fields: [
     {
@@ -115,7 +115,7 @@ export default {
       name: 'timeSlots',
       title: 'Dates et Horaires',
       type: 'array',
-      of: [{ type: 'timeSlot' }],
+      of: [{type: 'timeSlot'}],
       validation: (Rule) =>
         Rule.required().min(1).error('Doit contenir au moins un choix'),
     },
@@ -191,18 +191,25 @@ export default {
     // PUBLIC
     {
       name: 'audience',
-      title: 'A partir de',
-      type: 'reference',
-      to: {
-        type: 'audience',
-      },
+      title: "Classes d'âge",
+      type: 'array',
+      of: [
+        {
+          type: "reference",
+          to: {
+            type: 'audience',
+          }
+        },
+      ],
       fieldset: 'publicField',
       validation: (Rule) =>
-        Rule.custom((field, context) =>
-          context.document?.audienceCustom?.from === undefined &&
-          field === undefined
-            ? 'Un type de public doit etre indiqué'
+        Rule.custom((field, context) => {
+          console.log(field, context);
+          return context.document?.audienceCustom?.from === undefined &&
+            field === undefined
+            ? `Un type de public ou une tranche d'age personnalisée doit être indiqué`
             : true
+        }
         ),
     },
     {
