@@ -16,5 +16,11 @@ export default {
       description: '',
       type: 'boolean',
     },
+    {
+      name: 'age',
+      title: 'Age',
+      description: 'Age indicatif, pour pouvoir trier ensuite sur le site',
+      type: 'number',
+    }
   ],
 };

@@ -16,7 +16,7 @@ export default {
       title: 'Réservation',
       options: {
         collapsible: true, // Makes the whole fieldset collapsible
-        collapsed: true, // Defines if the fieldset should be collapsed by default or not
+        collapsed: false, // Defines if the fieldset should be collapsed by default or not
       },
     },
     {
@@ -24,7 +24,7 @@ export default {
       title: 'Village des Sciences',
       options: {
         collapsible: true, // Makes the whole fieldset collapsible
-        collapsed: true, // Defines if the fieldset should be collapsed by default or not
+        collapsed: false, // Defines if the fieldset should be collapsed by default or not
       },
     },
     {name: 'publicField', title: 'Public'},
@@ -49,11 +49,16 @@ export default {
     },
     {
       name: 'village',
-      title: 'Choisir le village partenaire',
-      type: 'reference',
-      to: {
-        type: 'village',
-      },
+      title: 'Choisir les villages partenaires',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'village',
+          },
+        },
+      ],
       fieldset: 'villageField',
     },
     {
