@@ -23,4 +23,13 @@ export default {
       type: 'number',
     }
   ],
+  orderings: [
+    {
+      title: 'Âge décroissant',
+      name: 'ageDesc',
+      by: [
+        {field: 'age', direction: 'desc'}
+      ]
+    },
+  ],
 };

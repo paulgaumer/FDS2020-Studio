@@ -27,7 +27,7 @@ export default {
         collapsed: false, // Defines if the fieldset should be collapsed by default or not
       },
     },
-    {name: 'publicField', title: 'Public'},
+    {name: 'publicField', title: 'Public', options: { collapsed: false }},
     {name: 'imageField', title: "Image d'illustration"},
   ],
   fields: [
@@ -110,10 +110,20 @@ export default {
       validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
-      name: 'map',
+      name: 'address',
       title: 'Adresse',
-      type: 'addressGps',
-      validation: (Rule) => Rule.required().error('Obligatoire'),
+      type: 'string',
+      validation: (Rule) =>
+        Rule.custom((field, context) => {
+          return !context.document?.village?.length &&
+            field === undefined
+            ? `Obligatoire`
+            : true
+        }
+        ),
+      hidden: ({document}) => {
+        return document?.village?.length
+      }
     },
     // DATE & HOURS FIELD
     {
@@ -121,8 +131,14 @@ export default {
       title: 'Dates et Horaires',
       type: 'array',
       of: [{type: 'timeSlot'}],
-      validation: (Rule) =>
-        Rule.required().min(1).error('Doit contenir au moins un choix'),
+      hidden: ({document}) => {
+        return document?.village?.length
+      }
+    },
+    {
+      name: 'timeSlotsPhoneContact',
+      title: 'Contact pour les dates et horaires',
+      type: 'string',
     },
     // BOOKING FIELD
     {
@@ -130,30 +146,45 @@ export default {
       title: 'Réservation Obligatoire',
       type: 'boolean',
       fieldset: 'bookingField',
+      hidden: ({document}) => {
+        return document?.village?.length
+      }
     },
     {
       name: 'bookingRecommanded',
       title: 'Réservation Conseillée',
       type: 'boolean',
       fieldset: 'bookingField',
+      hidden: ({document}) => {
+        return document?.village?.length
+      }
     },
     {
       name: 'bookingEmail',
       title: 'Email',
       type: 'string',
       fieldset: 'bookingField',
+      hidden: ({document}) => {
+        return document?.village?.length
+      }
     },
     {
       name: 'bookingPhone',
       title: 'Téléphone',
       type: 'string',
       fieldset: 'bookingField',
+      hidden: ({document}) => {
+        return document?.village?.length
+      }
     },
     {
       name: 'bookingWebsite',
       title: 'Site Web',
       type: 'url',
       fieldset: 'bookingField',
+      hidden: ({document}) => {
+        return document?.village?.length
+      }
     },
     // THEME
     {
@@ -209,19 +240,24 @@ export default {
       fieldset: 'publicField',
       validation: (Rule) =>
         Rule.custom((field, context) => {
-          console.log(field, context);
           return context.document?.audienceCustom?.from === undefined &&
             field === undefined
             ? `Un type de public ou une tranche d'age personnalisée doit être indiqué`
             : true
         }
         ),
+      hidden: ({document}) => {
+          return !document?.education
+      }
     },
     {
       name: 'audienceCustom',
       title: "Tranche d'age personnalisée (optionnel)",
       type: 'audienceCustom',
       fieldset: 'publicField',
+      hidden: ({document}) => {
+        return document?.education
+      }
     },
     // IMAGE
     {
@@ -232,7 +268,6 @@ export default {
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
       name: 'eventImageCredits',
@@ -246,8 +281,18 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'department.name',
-      media: 'image',
+      department: 'department.name',
+      image: 'image',
+      scolaire: 'education',
     },
+    prepare(selection) {
+      const {title, department, scolaire, image} = selection
+      console.log(selection)
+      return {
+        title,
+        subtitle: `${department}${scolaire ? ' - Scolaire': ''}`,
+        media: image,
+      }
+    }
   },
 };

@@ -5,6 +5,7 @@ export default {
   options: {
     columns: 2,
     collapsible: true,
+    collapsed: false,
   },
   fields: [
     {
