@@ -2,6 +2,15 @@ export default {
   name: 'logo',
   title: 'Logo',
   type: 'document',
+  orderings: [
+    {
+      title: 'Nom',
+      name: 'nameAsc',
+      by: [
+        {field: 'name', direction: 'asc'}
+      ]
+    },
+  ],
   fields: [
     {
       name: 'name',
@@ -31,6 +40,12 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'width',
+      title: 'Largeur',
+      type: 'number',
+      description: 'Largeur de l\'image en pixels',
+    }
   ],
   preview: {
     select: {
