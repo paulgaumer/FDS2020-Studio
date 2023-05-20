@@ -55,9 +55,9 @@ export default {
       validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
-      name: 'map',
+      name: 'address',
       title: 'Adresse',
-      type: 'addressGps',
+      type: 'string',
     },
     // DATE & HOURS FIELD
     {
