@@ -22,6 +22,36 @@ export default {
       fieldset: 'heroFieldSet',
     },
     {
+      name: 'leftLogo',
+      title: 'Logo de gauche',
+      type: 'image',
+      fieldset: 'heroFieldSet',
+    },
+    {
+      name: 'leftLogoWidth',
+      title: 'Largeur du logo de gauche',
+      type: 'number',
+      fieldset: 'heroFieldSet',
+    },
+    {
+      name: 'showRedCircle',
+      title: 'Afficher un cercle rouge sur le logo de gauche',
+      type: 'boolean',
+      fieldset: 'heroFieldSet',
+    },
+    {
+      name: 'rightLogo',
+      title: 'Logo de droite',
+      type: 'image',
+      fieldset: 'heroFieldSet',
+    },
+    {
+      name: 'rightLogoWidth',
+      title: 'Largeur du logo de droite',
+      type: 'number',
+      fieldset: 'heroFieldSet',
+    },
+    {
       name: 'featuresTitle',
       title: 'Titre de section',
       type: 'string',
