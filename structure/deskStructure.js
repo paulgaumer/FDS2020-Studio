@@ -53,6 +53,7 @@ export default () =>
       S.divider(),
       S.documentTypeListItem('page').title('Pages & Texte').icon(FaParagraph),
       S.divider(),
+      S.documentTypeListItem('route').title('Liens du menu').icon(GoTag),
       S.listItem()
         .title('Paramètres du site')
         .icon(GoSettings)

@@ -41,6 +41,7 @@ import ambassador from './documents/ambassador';
 import siteSettings from './documents/siteSettings';
 import logo from './documents/logo';
 import department from './documents/department';
+import route from './documents/route';
 import theme from './documents/theme';
 import format from './documents/format';
 import audience from './documents/audience';
@@ -102,6 +103,7 @@ export default createSchema({
     siteSettings,
     logo,
     department,
+    route,
     theme,
     format,
     audience,
