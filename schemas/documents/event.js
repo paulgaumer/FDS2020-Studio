@@ -287,7 +287,6 @@ export default {
     },
     prepare(selection) {
       const {title, department, scolaire, image} = selection
-      console.log(selection)
       return {
         title,
         subtitle: `${department}${scolaire ? ' - Scolaire': ''}`,
