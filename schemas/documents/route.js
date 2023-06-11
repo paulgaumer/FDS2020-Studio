@@ -2,6 +2,15 @@ export default {
   name: 'route',
   title: 'Liens menu',
   type: 'document',
+  orderings: [
+    {
+      title: 'Par ordre',
+      name: 'orderAsc',
+      by: [
+        {field: 'order', direction: 'asc'}
+      ]
+    },
+  ],
   fields: [
     {
       name: 'label',
@@ -20,5 +29,11 @@ export default {
       type: 'string',
       description: "/!\ Ne pas modifier",
     },
+    {
+      name: 'order',
+      title: 'Ordre',
+      type: 'number',
+      description: "Ordre d'affichage dans le menu",
+    }
   ],
 };

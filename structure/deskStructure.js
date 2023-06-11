@@ -8,6 +8,7 @@ import {
   GoBroadcast,
   GoPlay,
   GoLightBulb,
+  GoFile,
 } from 'react-icons/go';
 import { FaParagraph, FaCampground } from 'react-icons/fa';
 import event from './event';
@@ -24,12 +25,16 @@ export default () =>
         .title('Villages des Sciences')
         .icon(FaCampground),
       S.divider(),
+      S.documentTypeListItem('news')
+        .title('Actualités')
+        .icon(GoFile),
       S.documentTypeListItem('projectOwner')
         .title('Porteurs de projets')
         .icon(GoBriefcase),
       S.documentTypeListItem('ambassador').title('Ambassadeurs').icon(GoPerson),
       S.documentTypeListItem('logo').title('Logos').icon(GoFileMedia),
       S.documentTypeListItem('pressKit').title('Press Kit').icon(GoBroadcast),
+      S.documentTypeListItem('testimonials').title('Témoignages').icon(GoBroadcast),
       S.documentTypeListItem('quizByDepartment')
         .title('Quiz Visiteurs')
         .icon(GoLightBulb),

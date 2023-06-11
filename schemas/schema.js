@@ -54,6 +54,9 @@ import pressKit from './documents/pressKit';
 import village from './documents/village';
 import quizByDepartment from './documents/quiz';
 import quiz2021 from './documents/quiz2021';
+import news from './documents/news';
+import keyFigure from './objects/keyFigure';
+import testimonials from './documents/testimonials';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -66,6 +69,7 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
+    keyFigure,
     openGraph,
     mainImage,
     addressGps,
@@ -116,5 +120,7 @@ export default createSchema({
     village,
     quizByDepartment,
     quiz2021,
+    news,
+    testimonials,
   ]),
 });

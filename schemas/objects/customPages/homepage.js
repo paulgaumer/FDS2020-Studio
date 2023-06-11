@@ -4,6 +4,7 @@ export default {
   type: 'object',
   fieldsets: [
     { name: 'heroFieldSet', title: 'Haut de Page' },
+    { name: 'news', title: 'Actualités' },
     { name: 'featuresFieldSet', title: 'A propos de la Fête de la Science' },
     { name: 'instagramFieldSet', title: "A propos d'Instagram" },
   ],
@@ -11,6 +12,7 @@ export default {
     {
       name: 'heroButton',
       title: 'Texte du bouton',
+      description: 'Laisser vide pour ne pas afficher de bouton',
       type: 'string',
       fieldset: 'heroFieldSet',
     },
@@ -18,7 +20,6 @@ export default {
       name: 'heroUrl',
       title: 'Url du bouton',
       type: 'string',
-      description: 'Ne pas inclure https://fetedelascience-paysdelaloire.fr/',
       fieldset: 'heroFieldSet',
     },
     {
@@ -52,6 +53,12 @@ export default {
       fieldset: 'heroFieldSet',
     },
     {
+      name: 'hideNews',
+      title: 'Masquer les actualités',
+      type: 'boolean',
+      fieldset: 'news',
+    },
+    {
       name: 'featuresTitle',
       title: 'Titre de section',
       type: 'string',
@@ -73,6 +80,17 @@ export default {
       title: 'Texte du bouton',
       type: 'string',
       fieldset: 'featuresFieldSet',
+    },
+    {
+      name: 'keyFigures',
+      title: 'Chiffres clés',
+      fieldset: 'featuresFieldSet',
+      type: 'array',
+      of: [
+        {
+          type: 'keyFigure',
+        },
+      ],
     },
     {
       name: 'instagramTitle',
