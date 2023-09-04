@@ -136,45 +136,30 @@ export default {
       title: 'Réservation Obligatoire',
       type: 'boolean',
       fieldset: 'bookingField',
-      hidden: ({document}) => {
-        return document?.village?.length
-      }
     },
     {
       name: 'bookingRecommanded',
       title: 'Réservation Conseillée',
       type: 'boolean',
       fieldset: 'bookingField',
-      hidden: ({document}) => {
-        return document?.village?.length
-      }
     },
     {
       name: 'bookingEmail',
       title: 'Email',
       type: 'string',
       fieldset: 'bookingField',
-      hidden: ({document}) => {
-        return document?.village?.length
-      }
     },
     {
       name: 'bookingPhone',
       title: 'Téléphone',
       type: 'string',
       fieldset: 'bookingField',
-      hidden: ({document}) => {
-        return document?.village?.length
-      }
     },
     {
       name: 'bookingWebsite',
       title: 'Site Web',
       type: 'url',
       fieldset: 'bookingField',
-      hidden: ({document}) => {
-        return document?.village?.length
-      }
     },
     // THEME
     {
