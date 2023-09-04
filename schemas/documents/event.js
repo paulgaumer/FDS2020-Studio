@@ -113,14 +113,6 @@ export default {
       name: 'address',
       title: 'Adresse',
       type: 'string',
-      validation: (Rule) =>
-        Rule.custom((field, context) => {
-          return !context.document?.village?.length &&
-            field === undefined
-            ? `Obligatoire`
-            : true
-        }
-        ),
       hidden: ({document}) => {
         return document?.village?.length
       }
@@ -129,11 +121,9 @@ export default {
     {
       name: 'timeSlots',
       title: 'Dates et Horaires',
+      description: "Si l'événement est rattaché à un village, les dates et horaires seront automatiquement récupérés. Mais il est possible de les remplacer par des horaires remplis ici.",
       type: 'array',
-      of: [{type: 'timeSlot'}],
-      hidden: ({document}) => {
-        return document?.village?.length
-      }
+      of: [{type: 'timeSlot'}]
     },
     {
       name: 'timeSlotsPhoneContact',

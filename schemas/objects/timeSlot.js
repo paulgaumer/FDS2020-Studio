@@ -55,6 +55,12 @@ export default {
           name: '00:00',
         }),
     },
+    {
+      name: 'isEducation',
+      title: 'Est une date réservée aux scolaires',
+      description: "Réservé aux Villages des Sciences, sans ça toutes les dates d'un village sont affichées sur les événements, quel que soit le public visé",
+      type: 'boolean',
+    }
   ],
   preview: {
     select: {

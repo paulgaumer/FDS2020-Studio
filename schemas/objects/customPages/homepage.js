@@ -17,6 +17,12 @@ export default {
       fieldset: 'heroFieldSet',
     },
     {
+      name: 'showProgrammeButtons',
+      title: 'Afficher les boutons du programme. Si activé en même temps que le bouton ci-dessus, cela le remplace.',
+      type: 'boolean',
+      fieldset: 'heroFieldSet',
+    },
+    {
       name: 'heroUrl',
       title: 'Url du bouton',
       type: 'string',
@@ -55,6 +61,12 @@ export default {
     {
       name: 'hideNews',
       title: 'Masquer les actualités',
+      type: 'boolean',
+      fieldset: 'news',
+    },
+    {
+      name: 'showFavorites',
+      title: 'Afficher des coups de coeur en actualités',
       type: 'boolean',
       fieldset: 'news',
     },
