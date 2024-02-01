@@ -96,7 +96,7 @@ const event = S.listItem()
                 S.documentList()
                   .schemaType('event')
                   .title('Evénements')
-                  .filter('_type == "event" && $villageId == village._ref')
+                  .filter('_type == "event" && $villageId in village[]._ref')
                   .params({ villageId })
               )
           ),
