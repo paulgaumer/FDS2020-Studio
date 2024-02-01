@@ -34,6 +34,16 @@ export default {
       validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
+      name: 'scolaire',
+      title: 'Accueille le public scolaire ?',
+      type: 'boolean',
+    },
+    {
+      name: 'grandPublic',
+      title: 'Accueille le grand public ?',
+      type: 'boolean',
+    },
+    {
       name: 'eventCanceled',
       title: 'Label Annulé',
       type: 'boolean',
