@@ -11,6 +11,7 @@ export default {
   },
   fieldsets: [
     {name: 'featuredField', title: 'Labels'},
+    {name: 'informationsContact', title: 'Renseignements'},
     {
       name: 'bookingField',
       title: 'Réservation',
@@ -129,6 +130,19 @@ export default {
       name: 'timeSlotsPhoneContact',
       title: 'Contact pour les dates et horaires',
       type: 'string',
+    },
+    // CONTACT FIELD
+    {
+      name: 'informationEmail',
+      title: 'Email renseignements',
+      type: 'string',
+      fieldset: 'informationsContact',
+    },
+    {
+      name: 'informationPhone',
+      title: 'Téléphone renseignements',
+      type: 'string',
+      fieldset: 'informationsContact',
     },
     // BOOKING FIELD
     {
