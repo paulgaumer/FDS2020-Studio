@@ -1,0 +1,226 @@
+export default {
+  name: 'adageMappings',
+  title: 'Correspondance avec le questionnaire Adage',
+  type: 'document',
+  __experimental_actions: ['update', "create", "delete", 'publish'],
+  fieldsets: [
+    {
+      name: 'themesSet',
+      title: 'Thèmes',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
+      name: 'formatSet',
+      title: 'Formats',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
+      name: 'audienceSet',
+      title: 'Audiences',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
+      name: 'departmentSet',
+      title: 'Départements',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
+      name: 'villageSet',
+      title: 'Villages',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+    {
+      name: 'questionSet',
+      title: 'Correspondance avec les colonnes Adage',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+    },
+  ],
+  fields: [
+    {
+      name: 'themeChoices',
+      title: 'Thèmes',
+      type: 'array',
+      of: [{ type: 'themeMapping' }],
+      fieldset: 'themesSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'formatChoices',
+      title: 'Formats',
+      type: 'array',
+      of: [{ type: 'formatMapping' }],
+      fieldset: 'formatSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'audienceChoices',
+      title: 'Audiences scolaires',
+      type: 'array',
+      of: [{ type: 'audienceMapping' }],
+      fieldset: 'audienceSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'departmentChoices',
+      title: 'Departements',
+      type: 'array',
+      of: [{ type: 'departmentMapping' }],
+      fieldset: 'departmentSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'villageChoices',
+      title: 'Villages scolaires',
+      type: 'array',
+      of: [{ type: 'villageMapping' }],
+      fieldset: 'villageSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+
+    {
+      name: 'nomEtablissement',
+      title: "Intitulé de la colonne sur le nom de l'établissement",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'departement',
+      title: 'Intitulé de la colonne sur le département',
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'themes',
+      title: 'Intitulé de la colonne sur les thèmes',
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'formats',
+      title: 'Intitulé de la colonne sur les formats',
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+
+    {
+      name: 'description',
+      title: 'Intitulé de la colonne sur la description du projet',
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'titre',
+      title: 'Intitulé de la colonne sur le titre du projet',
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'typePublic',
+      title: "Intitulé de la colonne sur le type de public",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'village',
+      title: "Intitulé de la colonne sur le village",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'adresse',
+      title: "Intitulé de la colonne sur l'adresse du projet",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'audience',
+      title: "Intitulé de la colonne sur la tranche d'age scolaire",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'audienceCustomFrom',
+      title: "Intitulé de la colonne sur la tranche d'age publique min",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'audienceCustomTo',
+      title: "Intitulé de la colonne sur la tranche d'age publique max",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'coordonneesReservation',
+      title: 'Intitulé de la colonne sur les coordonnées de réservation',
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'bookingEmail',
+      title: "Intitulé de la colonne sur le courriel de réservation",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'bookingPhone',
+      title: "Intitulé de la colonne sur le téléphone de réservation",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'timeSlotsPhoneContact',
+      title: "Intitulé de la colonne sur le téléphone pour les infos horaires",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+    {
+      name: 'idAdage',
+      title: "Intitulé de la colonne sur l'identifiant de la réponse Adage",
+      type: 'string',
+      fieldset: 'questionSet',
+      validation: (Rule) => Rule.required().error('Obligatoire'),
+    },
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: `Correspondances entre le questionnaire et le CMS`,
+      };
+    },
+  },
+};

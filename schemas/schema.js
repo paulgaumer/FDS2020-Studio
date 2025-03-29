@@ -36,7 +36,15 @@ import faqQuestion from './objects/faqQuestion';
 import questionnairePage from './objects/customPages/questionnairePage';
 import documentField from './objects/documentField';
 
+// MAPPING BLOCKS FOR ADAGE PAGE
+import themeMapping from './objects/mappingBlocks/themeMapping';
+import audienceMapping from './objects/mappingBlocks/audienceMapping';
+import formatMapping from './objects/mappingBlocks/formatMapping';
+import departmentMapping from './objects/mappingBlocks/departmentMapping';
+import villageMapping from './objects/mappingBlocks/villageMapping';
+
 // DOCUMENTS
+import adageMappings from './documents/adageMappings';
 import ambassador from './documents/ambassador';
 import siteSettings from './documents/siteSettings';
 import logo from './documents/logo';
@@ -99,10 +107,16 @@ export default createSchema({
     faqQuestion,
     questionnairePage,
     documentField,
+    themeMapping,
+    audienceMapping,
+    formatMapping,
+    departmentMapping,
+    villageMapping,
     // _____________________
     //DOCUMENTS TYPES
     // The following are document types which will appear
     // in the studio.
+    adageMappings,
     ambassador,
     siteSettings,
     logo,

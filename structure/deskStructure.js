@@ -55,6 +55,15 @@ export default () =>
       S.documentTypeListItem('contactDepartment')
         .title('Contacts Départementaux')
         .icon(GoTag),
+      S.listItem()
+        .title('Correspondance adage')
+        .icon(GoSettings)
+        .child(
+          S.editor()
+            .id('adageMappings')
+            .schemaType('adageMappings')
+            .documentId('adageMappings')
+        ),
       S.divider(),
       S.documentTypeListItem('page').title('Pages & Texte').icon(FaParagraph),
       S.divider(),
