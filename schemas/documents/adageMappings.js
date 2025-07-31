@@ -110,8 +110,8 @@ export default {
       validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
-      name: 'themes',
-      title: 'Intitulé de la colonne sur les thèmes',
+      name: 'titre',
+      title: 'Intitulé de la colonne sur le titre du projet',
       type: 'string',
       fieldset: 'questionSet',
       validation: (Rule) => Rule.required().error('Obligatoire'),
@@ -132,8 +132,8 @@ export default {
       validation: (Rule) => Rule.required().error('Obligatoire'),
     },
     {
-      name: 'titre',
-      title: 'Intitulé de la colonne sur le titre du projet',
+      name: 'themes',
+      title: 'Intitulé de la colonne sur les thèmes',
       type: 'string',
       fieldset: 'questionSet',
       validation: (Rule) => Rule.required().error('Obligatoire'),
