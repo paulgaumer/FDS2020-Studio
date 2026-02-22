@@ -1,6 +1,19 @@
-import S from '@sanity/desk-tool/structure-builder';
+import { structureTool } from 'sanity/structure';
+import { 
+  ListBuilder, 
+  DocumentTypeListBuilder, 
+  ListItemBuilder
+} from 'sanity/structure';
+
+const S = {
+  list: () => new ListBuilder(),
+  documentTypeListItem: (type) => new DocumentTypeListBuilder({ schemaType: type }),
+  divider: () => S.listItem().title('---'), // Divider temporaire
+  listItem: () => new ListItemBuilder(),
+  // editor: () => new Editor(), // Désactivé pour l'instant
+};
 import {
-  GoSettings,
+  GoGear,
   GoTag,
   GoFileMedia,
   GoPerson,
@@ -38,15 +51,9 @@ export default () =>
       S.documentTypeListItem('quizByDepartment')
         .title('Quiz Visiteurs')
         .icon(GoLightBulb),
-      S.listItem()
+      S.documentTypeListItem('quiz2021')
         .title('Quiz Anniversaire 2021')
-        .icon(GoLightBulb)
-        .child(
-          S.editor()
-            .id('quiz2021')
-            .schemaType('quiz2021')
-            .documentId('quiz2021')
-        ),
+        .icon(GoLightBulb),
       S.divider(),
       S.documentTypeListItem('theme').title('Thèmes').icon(GoTag),
       S.documentTypeListItem('format').title('Formats').icon(GoTag),
@@ -55,26 +62,14 @@ export default () =>
       S.documentTypeListItem('contactDepartment')
         .title('Contacts Départementaux')
         .icon(GoTag),
-      S.listItem()
+      S.documentTypeListItem('adageMappings')
         .title('Correspondance adage')
-        .icon(GoSettings)
-        .child(
-          S.editor()
-            .id('adageMappings')
-            .schemaType('adageMappings')
-            .documentId('adageMappings')
-        ),
+        .icon(GoGear),
       S.divider(),
       S.documentTypeListItem('page').title('Pages & Texte').icon(FaParagraph),
       S.divider(),
       S.documentTypeListItem('route').title('Liens du menu').icon(GoTag),
-      S.listItem()
+      S.documentTypeListItem('siteSettings')
         .title('Paramètres du site')
-        .icon(GoSettings)
-        .child(
-          S.editor()
-            .id('siteSettings')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
-        ),
+        .icon(GoGear),
     ]);

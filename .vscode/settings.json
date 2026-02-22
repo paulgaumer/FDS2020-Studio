@@ -1,3 +1,7 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "workbench.colorCustomizations": {
+    "editorHint.foreground": "#ff0000",
+    "editorHint.border": "#00ff66"
+  }
 }
