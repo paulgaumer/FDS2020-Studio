@@ -1,0 +1,18 @@
+import { defineField, defineType } from "sanity";
+
+export default defineType({
+  title: "Bloc pour page Mentions Légales",
+  name: "mentionsLegalesPageBlock",
+  type: "object",
+  fields: [
+    defineField({ name: "topTitle", title: "Titre de haut de page", type: "string" }),
+    defineField({ name: "contentBlock", title: "Contenu Texte", type: "blockContent" }),
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: `Modifier la page Mentions Légales`,
+      };
+    },
+  },
+});

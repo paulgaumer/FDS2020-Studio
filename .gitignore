@@ -2,5 +2,8 @@ node_modules
 dist
 *.tar.gz
 .DS_Store
-.vscode/settings.json
-PLAN.md
+.sanity
+.agents
+.vibe
+.vscode
+.yarn

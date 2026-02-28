@@ -43,25 +43,9 @@
     "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
     "@sanity/vision",
-    "mapbox-input-address",
     "@sanity/rich-date-input",
     "@sanity/dashboard",
     "dashboard-widget-netlify"
-  ],
-  "parts": [
-    {
-      "name": "part:@sanity/base/schema",
-      "path": "./schemas/schema.js"
-    },
-    {
-      "name": "part:@sanity/desk-tool/structure",
-      "path": "./structure/deskStructure.js"
-    },
-    {
-      "implements": "part:@sanity/dashboard/config",
-      "path": "./structure/dashboardConfig.js"
-    }
   ]
 }
