@@ -5,7 +5,11 @@ export default defineType({
   name: "eventsIndexPageBlock",
   type: "object",
   fields: [
-    defineField({ name: "topTitle", title: "Titre de haut de page", type: "string" }),
+    defineField({
+      name: "topTitle",
+      title: "Titre de haut de page",
+      type: "string",
+    }),
     defineField({
       name: "partnersTitle",
       title: "Titre Section Partenaires",

@@ -20,7 +20,7 @@ export default defineType({
     select: {
       url: "url",
     },
-    prepare(value: { url: string | undefined }): Record<string, string> {
+    prepare(value: Record<string, any>): Record<string, string> {
       return {
         url: value.url || "Aucune URL",
       };

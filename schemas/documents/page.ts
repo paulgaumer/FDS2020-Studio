@@ -25,7 +25,7 @@ export default defineType({
         defineArrayMember({ type: "quiz21ConditionsPageBlock" }),
         defineArrayMember({ type: "questionnairePageBlock" }),
       ],
-      options: { modal: { type: 'dialog' } },
+      options: { modal: { type: "dialog" } },
       validation: (Rule) => Rule.required().min(1).max(1),
     }),
     defineField({

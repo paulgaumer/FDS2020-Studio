@@ -65,9 +65,11 @@ export default defineType({
       description: "Youtube url",
       type: "url",
       validation: (Rule) =>
-        Rule.uri({ scheme: ["http", "https", "youtube"] })
-          .regex(/youtube/)
-          .error("Le format n'est pas valide. Est-ce une url youtube?"),
+        Rule.uri({ scheme: ["http", "https"] }).custom((url) =>
+          typeof url === "string" && url.includes("youtube")
+            ? true
+            : "Le format n'est pas valide. Est-ce une url youtube?",
+        ),
     }),
   ],
   preview: {

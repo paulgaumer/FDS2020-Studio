@@ -6,9 +6,17 @@ export default defineType({
   type: "object",
   fieldsets: [{ name: "contactPressField", title: "Bloc Contact Press" }],
   fields: [
-    defineField({ name: "topTitle", title: "Titre de haut de page", type: "string" }),
+    defineField({
+      name: "topTitle",
+      title: "Titre de haut de page",
+      type: "string",
+    }),
     defineField({ name: "topContent", title: "Contenu", type: "blockContent" }),
-    defineField({ name: "pressTitle", title: "Titre de Section Presse", type: "string" }),
+    defineField({
+      name: "pressTitle",
+      title: "Titre de Section Presse",
+      type: "string",
+    }),
     defineField({
       name: "contactTitle",
       title: "Titre de bloc Contact Presse",

@@ -5,8 +5,16 @@ export default defineType({
   name: "quiz21ConditionsPageBlock",
   type: "object",
   fields: [
-    defineField({ name: "topTitle", title: "Titre de haut de page", type: "string" }),
-    defineField({ name: "contentBlock", title: "Contenu Texte", type: "blockContent" }),
+    defineField({
+      name: "topTitle",
+      title: "Titre de haut de page",
+      type: "string",
+    }),
+    defineField({
+      name: "contentBlock",
+      title: "Contenu Texte",
+      type: "blockContent",
+    }),
   ],
   preview: {
     prepare() {

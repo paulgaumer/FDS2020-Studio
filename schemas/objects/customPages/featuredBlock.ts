@@ -11,7 +11,11 @@ export default defineType({
       title: "Titre de section",
       description: "Structure: TITRE [icone coup de coeur]",
     }),
-    defineField({ name: "featuredContent", type: "text", title: "Contenu de section" }),
+    defineField({
+      name: "featuredContent",
+      type: "text",
+      title: "Contenu de section",
+    }),
   ],
   preview: {
     prepare() {

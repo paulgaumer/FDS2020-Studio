@@ -1,4 +1,4 @@
-import {  defineField, defineType } from "sanity";
+import { defineField, defineType } from "sanity";
 
 export default defineType({
   name: "onlineEvent",
@@ -9,7 +9,7 @@ export default defineType({
     bookingRecommanded: false,
   },
   fieldsets: [
-  {
+    {
       name: "bookingField",
       title: "Réservation",
       options: { collapsible: true, collapsed: false },

@@ -10,16 +10,14 @@ export default defineType({
       name: "title",
       type: "string",
       description: "Moins de 60 caractères",
-      validation: (Rule) =>
-        Rule.max(60).warning("Moins de 60 caractères"),
+      validation: (Rule) => Rule.max(60).warning("Moins de 60 caractères"),
     }),
     defineField({
       title: "Description",
       name: "description",
       type: "text",
       description: "Moins de 155 caractères",
-      validation: (Rule) =>
-        Rule.max(155).warning("Moins de 155 caractères"),
+      validation: (Rule) => Rule.max(155).warning("Moins de 155 caractères"),
     }),
     defineField({
       title: "Mots-clés",

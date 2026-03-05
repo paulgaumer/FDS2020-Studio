@@ -22,4 +22,4 @@ export default defineType({
       title: "name",
     },
   },
-})
+});

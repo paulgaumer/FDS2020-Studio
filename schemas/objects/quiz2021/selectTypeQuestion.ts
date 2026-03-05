@@ -1,6 +1,5 @@
 import { defineField, defineType } from "sanity";
 
-
 export default defineType({
   title: "Question de sélection",
   name: "selectTypeQuestion",

@@ -1,6 +1,5 @@
 import getYoutubeID from "get-youtube-id";
 
-
 const YoutubePreview = (props: any) => {
   const urlValue = props?.url;
   const id = urlValue ? getYoutubeID(urlValue) : null;

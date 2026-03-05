@@ -5,8 +5,16 @@ export default defineType({
   name: "villageBlock",
   type: "object",
   fields: [
-    defineField({ name: "villageTitle", type: "string", title: "Titre de section" }),
-    defineField({ name: "villageContent", type: "text", title: "Contenu de section" }),
+    defineField({
+      name: "villageTitle",
+      type: "string",
+      title: "Titre de section",
+    }),
+    defineField({
+      name: "villageContent",
+      type: "text",
+      title: "Contenu de section",
+    }),
   ],
   preview: {
     prepare() {
